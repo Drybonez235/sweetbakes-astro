@@ -1,0 +1,103 @@
+---
+import "../styles/global.css";
+import { BAKERY_MENU } from '../data/menu';
+import Page from "../layouts/index.astro";
+---
+<Page
+  page_title="Custom Decorated Cookies For Events & Occasions - Sweet Bakes Chicago."
+  page_description="Order personalized decorated sugar cookies for parties, holidays, and corporate events. Fully customized designs and flavors available."
+>
+
+<section class="w-full">
+  <div class="w-full h-44 md:h-64 bg-gray-100">
+    <img src="decorated-cookies-hero.avif" alt="Cap and gown cookies" class="object-cover w-full h-full" />
+  </div>
+</section>
+
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+  <section id="custom_cookies" class="prose lg:prose-lg">
+    <h1 class="text-3xl font-semibold">Custom Decorated Cookies</h1>
+    <p class="text-sm text-gray-600">Our custom decorated cookies are hand-iced and designed to match events, themes,
+      and branding. Gluten and dairy free options are available; additional charges may apply depending on flavors and
+      decoration complexity.</p>
+  </section>
+
+  <section class="bg-brand-light-cream rounded-lg p-6 ">
+    <div class="flex items-center justify-center gap-4 overflow-x-auto pb-4" aria-label="Decorated cookie examples">
+      <img src="decorated-cookies-cics.avif" alt="Decorated cookies CICS Irving park"
+        class="w-72 h-48 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="decorated-cookies-ghosts.avif" alt="Ghost movie cookies"
+        class="w-72 h-48  object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="decorated-cookies-baby-shower.avif" alt="Baby Shower Decorated cookies"
+        class="w-72 h-48  object-cover rounded shadow-sm flex-shrink-0" />
+    </div>
+  </section>
+
+  <section class="bg-brand-light-cream border rounded-lg p-6 shadow-sm">
+    <h2 class="text-2xl font-semibold mb-2">Flavors</h2>
+    <p class="mb-4 text-sm text-gray-600">Gluten and dairy free options available. Additional charges apply.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <ul class="list-disc list-inside space-y-1 text-gray-700">
+        <li>Vanilla</li>
+        <li>Chocolate</li>
+        <li>Lemon</li>
+      </ul>
+
+      <div class="flex items-center justify-center">
+        <p class="text-sm text-gray-500 text-center">We can combine flavors or create custom flavor requests — contact
+          us for details and pricing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-light-cream rounded-lg p-6">
+    <div class="flex items-center justify-center gap-4 overflow-x-auto pb-4" aria-label="More decorated cookie examples">
+      <img src="decorated-cookies-Indiana.avif" alt="Decorated cookie example 4"
+        class="w-72 h-48 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="animated-dog-cookies.avif" alt="animated dog cookies for toddlers"
+        class="w-72 h-48 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="decorated-cookies-baby-doll.avif" alt="Cookies for girl party"
+        class="w-72 h-48 object-cover rounded shadow-sm flex-shrink-0" />
+    </div>
+  </section>
+
+  <section id="decorated-cookie-pricing" class="bg-brand-light-cream border rounded-lg p-6 shadow-sm">
+    <h2 class="text-2xl font-semibold mb-2">Price*</h2>
+    <p class="mb-4 text-sm text-gray-600">Most cookies are 3&quot; cookies, but the size will vary depending on the
+      shape. There may be extra charges for larger cookies or more detailed decorations.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div class="border rounded p-4">
+        <h3 class="font-semibold">Royal Icing decorations</h3>
+        <p class="mt-3 text-gray-700">Starting at <span class="font-medium">${BAKERY_MENU["cookies-decorated-icing"].price.toFixed(2)} a dozen</span></p>
+        <p class="mt-2 text-sm text-gray-500">Price dependent on complexity and color count.</p>
+      </div>
+
+      <div class="border rounded p-4">
+        <h3 class="font-semibold">Characters &amp; Logo designs</h3>
+        <p class="mt-3 text-gray-700">Starting at <span class="font-medium">${BAKERY_MENU["cookies-decorated-logos"].price.toFixed(2)} a dozen</span></p>
+        <p class="mt-2 text-sm text-gray-500">Price dependent on design detail and artwork preparation.</p>
+      </div>
+    </div>
+
+    <p class="mt-6 text-gray-700">All cookies come packaged together in a box. Individual packaging available for an
+      additional <span class="font-medium">$3 a dozen</span>.</p>
+  </section>
+
+  <section class="bg-brand-light-cream border border-brand-teal rounded-lg p-6 shadow-sm">
+    <p class="text-sm text-brand-dark-brown">
+      *Most cookies are 3&quot; cookies, but the size will vary depending on the
+      shape. There may be extra charges for larger cookies or more detailed
+      decorations. Please contact us for a custom quote — include event date,
+      quantity, preferred flavors, and reference images when possible.
+    </p>
+
+    <div class="mt-4">
+      <a href="/contact"
+        class="inline-block bg-brand-teal text-white px-4 py-2 rounded hover:bg-brand-grey-green">Request a Quote</a>
+    </div>
+  </section>
+</main>
+
+</Page>

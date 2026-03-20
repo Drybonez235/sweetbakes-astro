@@ -1,0 +1,402 @@
+---
+import "../styles/global.css";
+
+import Page from "../layouts/index.astro";
+---
+
+<Page
+  page_title="Cake & Frosting Flavors - Sweet Bakes Chicago Menu Guide."
+  page_description="See our complete list of popular cake, filling, and frosting flavors to help you design your perfect custom cake or cupcake order."
+>
+
+<section class="w-full">
+  <div class="w-full h-44 md:h-64 bg-gray-100">
+    <img src="cake-hero-cupcakes.avif" alt="Cakes hero" class="object-cover w-full h-full" />
+  </div>
+</section>
+
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+  <section class="prose lg:prose-lg">
+    <h1 class="text-3xl font-semibold">Cakes & Flavors</h1>
+    <p>We offer a wide range of classic and specialty cake flavors. All cakes are made in our nut-free
+      facility. If you have dietary needs (gluten-free, dairy-free, sugar-free) please contact us
+      to confirm availability for specific designs.</p>
+  </section>
+
+  <style>
+    /* Base style for custom bullets */
+    .list-with-svgs {
+      list-style: none;
+      /* Remove default bullet */
+      padding-left: 0;
+      /* Adjust padding if needed */
+    }
+
+    .list-with-svgs li {
+      position: relative;
+      padding-left: 28px;
+      /* Space for the SVG */
+      margin-bottom: 8px;
+      /* Adjust spacing between list items */
+    }
+
+    .list-with-svgs li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      /* SVG width */
+      height: 20px;
+      /* SVG height */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Specific SVG styles */
+    .list-with-svgs .white-cake::before {
+      background-image: url('/svgs/cake-thin-white-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .yellow-cake::before {
+      background-image: url('/svgs/cake-thin-yellow-svgrepo-com.svg');
+    }
+
+    /* Assuming you want a default chocolate SVG, if not, adjust */
+    .list-with-svgs .chocolate-cake::before {
+      background-image: url('/svgs/cake-thin-chocolate-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .red-velvet-cake::before {
+      background-image: url('/svgs/cake-thin-red-velvet-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .strawberry-cake::before {
+      background-image: url('/svgs/strawberry-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .lemon-cake::before {
+      background-image: url('/svgs/lemon-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .lime-cake::before {
+      background-image: url('/svgs/lime-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .raspberry-cake::before {
+      /* You don't have a raspberry SVG in your list, using berry for now */
+      background-image: url('/svgs/berry-cooking-food-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .marble-cake::before {
+      background-image: url('/svgs/marble-cake-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .mocha-flavor::before {
+      background-image: url('/svgs/mocha-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .coffee-flavor::before {
+      background-image: url('/svgs/coffee-bean-filled-roast-brew-svgrepo-com.svg');
+    }
+
+    .list-with-svgs .cinnamon-flavor::before {
+      background-image: url('/svgs/cinnamon.svg');
+    }
+  </style>
+
+  <!-- Traditional Flavors -->
+  <section class="bg-white rounded-lg p-6 shadow-sm">
+  
+    <h2 class="text-2xl font-semibold mb-4">Cake Flavors</h2>
+    <p class="mb-4 text-gray-700">
+      You can't go wrong with our flavor options. From rich chocolate to sweet cinnamon, each flavor is sure to impress! Can't find what you want? We often create custom flavors — ask when placing
+      your order. We also offer gluten, dairy, egg, and sugar free options.*
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Classic Flavors</h4>
+      <ul class="list-with-svgs mt-2 text-sm space-y-1">
+        <li class="white-cake duration-200 hover:scale-103">White</li>
+        <li class="yellow-cake duration-200 hover:scale-103">Yellow</li>
+        <li class="chocolate-cake duration-200 hover:scale-103">Chocolate</li>
+        <li class="red-velvet-cake duration-200 hover:scale-103">Red Velvet</li>
+        <li class="strawberry-cake duration-200 hover:scale-103">Strawberry</li>
+        <li class="marble-cake duration-200 hover:scale-103">Marble (swirl of two flavors)</li>
+      </ul>
+      </div>
+
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Bold Flavors</h4>
+      <ul class="list-with-svgs mt-2 text-sm space-y-1">
+        <li class="lime-cake duration-200 hover:scale-103">Lime</li>
+        <li class="lemon-cake duration-200 hover:scale-103">Lemon</li>
+        <li class="raspberry-cake duration-200 hover:scale-103">Raspberry</li>
+        <li class="mocha-flavor duration-200 hover:scale-103">Mocha</li>
+        <li class="coffee-flavor duration-200 hover:scale-103">Coffee</li>
+        <li class="cinnamon-flavor duration-200 hover:scale-103">Cinnamon</li>
+      </ul>
+      </div>  
+    </div>
+  </section>
+
+  </section>
+
+  <!-- Frosting Types -->
+  <section class="rounded-lg p-6 shadow-sm bg-[url('/swiss-meringue-buttercream.avif')] bg-cover bg-center">
+    <h2 class="text-2xl font-semibold mb-4 !text-brand-dark-brown">Frosting</h2>
+    <p class="mb-4 text-sm text-brand-dark-brown font-semibold rounded-md">It is the icing on top... literally! We provide custom color and flavor options. Choose from classic or specialty frostings. We tint and flavor frostings to match your design — final color may differ
+      slightly.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Classic Frostings</h3>
+        <ul class="mt-2 text-sm space-y-1">
+          <li class="duration-200 hover:scale-103">American Buttercream</li>
+          <li class="duration-200 hover:scale-103">Italian Buttercream</li>
+          <li class="duration-200 hover:scale-103">Sugar Free Buttercream (made with monk fruit)</li>
+          <li class="duration-200 hover:scale-103">Cream Cheese</li>
+        </ul>
+      </div>
+
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Specialty Frostings*</h3>
+        <ul class="mt-2 text-sm space-y-1">
+          <li class="duration-200 hover:scale-103">Ganache (White, Milk, or Dark)</li>
+          <li class="duration-200 hover:scale-103">Whipped Cream</li>
+          <li class="duration-200 hover:scale-103">Fondant</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frosting Flavor Additions -->
+  <section class="rounded-lg p-6 shadow-sm bg-[url('/how-to-melt-chocolate.avif')] bg-cover bg-center">
+    <h2 class="text-2xl font-semibold mb-4 !text-brand-light-cream">Frosting Flavor Additions</h2>
+    <p class="mb-4 text-sm font-semibold text-brand-light-cream rounded-md">Add any of these flavors to your frosting for an additional kick of flavor. These are just a few of our options. Contacts us if you have something else in
+      mind. The possibilities are endless!</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Decadent</h4>
+        <ul class="mt-2 text-sm space-y-1">
+          <li class="duration-200 hover:scale-103">Chocolate</li>
+          <li class="duration-200 hover:scale-103">Salted Caramel</li>
+          <li class="duration-200 hover:scale-103">Maple</li>
+          <li class="duration-200 hover:scale-103">Bourbon</li>
+        </ul>
+      </div>
+
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Fruit & Citrus</h4>
+        <ul class="mt-2 text-sm space-y-1">
+          <li class="duration-200 hover:scale-103">Strawberry</li>
+          <li class="duration-200 hover:scale-103">Raspberry</li>
+          <li class="duration-200 hover:scale-103">Blackberry</li>
+          <li class="duration-200 hover:scale-103">Lemon</li>
+          <li class="duration-200 hover:scale-103">Lime</li>
+          <li class="duration-200 hover:scale-103">Orange</li>
+        </ul>
+      </div>
+
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Spices & Essences</h4>
+        <ul class="mt-2 text-sm space-y-1">
+          <li class="duration-200 hover:scale-103">Cinnamon</li>
+          <li class="duration-200 hover:scale-103">Ginger</li>
+          <li class="duration-200 hover:scale-103">Lavender</li>
+          <li class="duration-200 hover:scale-103">Rosewater</li>
+          <li class="duration-200 hover:scale-103">Peppermint</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fillings -->
+  <section class="rounded-lg p-6 shadow-sm bg-[url('/easy-homemade-blueberry-pie-filling.avif')] bg-cover bg-center">
+    <h2 class="text-2xl font-semibold mb-4 !text-white">Fillings*</h2>
+    <p class="mb-4 text-sm text-white font-semibold rounded-md">Surprise your guests with our delightful cake fillings. Each filling perfectly balances out your cake's flavor and texture. We also offer fresh fruit and other flavors on request. Note: Fresh fruit is not
+      recommended for outdoor parties during the summer months.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+       <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Sweet and Fruity</h4>
+      <ul class="mt-2 text-sm space-y-1">
+        <li class="duration-200 hover:scale-103">Strawberry</li>
+        <li class="duration-200 hover:scale-103">Raspberry</li>
+        <li class="duration-200 hover:scale-103">Blackberry</li> 
+        <li class="duration-200 hover:scale-103">Peach</li>
+        <li class="duration-200 hover:scale-103">Cherry</li>
+      </ul>
+      </div>
+
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Rich and Creamy</h4>
+      <ul class="mt-2 text-sm space-y-1">
+        <li class="duration-200 hover:scale-103">Chocolate Ganache</li>
+        <li class="duration-200 hover:scale-103">White Chocolate Ganache</li>
+        <li class="duration-200 hover:scale-103">Caramel</li>
+        <li class="duration-200 hover:scale-103">Chocolate Mousse</li>
+        <li class="duration-200 hover:scale-103">Vanilla Mousse</li>
+      </ul>
+      </div>
+    </div>
+  </section>
+  <p class="text-sm text-gray-600">*Additional fees may apply</p>
+  <!-- Signature Gourmet Cakes (Sara's specialties) -->
+  <section>
+    <h2 class="text-4xl font-semibold mb-4">Signature Gourmet Cakes — Sara's Specialties</h2>
+
+    <p class="text-sm text-gray-600 mb-6">These are our specialty designs and flavor combinations — perfect for
+      celebrations where you want something unique and memorable.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <!-- <img src="chocolate_chip_cookie_dough.avif" alt="Chocolate Chip Cookie Dough" class="w-full h-44 object-contain" /> -->
+        <div class="p-4">
+          <h3 class="font-semibold">Chocolate Chip Cookie Dough</h3>
+          <p class="mt-2 text-sm text-gray-700">Brown sugar cake filled with egg-less chocolate chip cookie dough.
+            Frosted with salted vanilla buttercream or chocolate ganache.</p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <!-- <img src="can_i_have_smore.avif" alt="May I Have S'more" class="w-full h-44 object-cover" /> -->
+        <div class="p-4">
+          <h3 class="font-semibold">May I Have S'more</h3>
+          <p class="mt-2 text-sm text-gray-700">Graham cracker cake filled with chocolate ganache. Frosted with toasted
+            marshmallow frosting and topped with ganache drip.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <!-- <img src="berry_lemon.avif" alt="Triple Berry Lemon" class="w-full h-44 object-contain" /> -->
+        <div class="p-4">
+          <h3 class="font-semibold">Triple Berry Lemon</h3>
+          <p class="mt-2 text-sm text-gray-700">Light and fluffy lemon cake with whole blueberries. Filled with a layer
+            of
+            strawberry, and a layer of raspberry Italian buttercream. Frosted in lemon
+            Italian buttercream.</p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <!-- <img src="ube_dream.avif" alt="Ube Dream" class="w-full h-44 object-cover" /> -->
+        <div class="p-4">
+          <h3 class="font-semibold">Ube Dream</h3>
+          <p class="mt-2 text-sm text-gray-700">This boba tea inspired cake is made with real ube! It is an ube sponge
+            filled with vanilla mousse and frosted in an ube and
+            mascarpone buttercream. It's naturally purple!</p>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <!-- <img src="chocolate_chai.avif" alt="Chocolate Chai Cake Pops" class="w-full h-44 object-cover" /> -->
+        <div class="p-4">
+          <h3 class="font-semibold">Chocolate Chai</h3>
+          <p class="mt-2 text-sm text-gray-700">Our delicious chocolate cake mixed with real black tea, cardamom,
+            cinnamon, ginger, and black pepper. Filled and frosted in Chai tea Italian
+            buttercream. Topped with chocolate ganache drip.</p>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <!--<img src="chocolate_burbon.avif" alt="Chocolate Bourbon" class="w-full h-44 object-cover" />!-->
+        <div class="p-4">
+          <h3 class="font-semibold">Chocolate Bourbon</h3>
+          <p class="mt-2 text-sm text-gray-700">Contains alcohol, for adults only Super moist chocolate cake infused
+            with real bourbon whiskey. Filled with
+            chocolate ganache. Topped with chocolate bourbon buttercream.</p>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-4 text-center">Other Specialties</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 7 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Blackberry Peach</h3>
+          <p class="mt-2 text-sm text-gray-700">Vanilla cake filled with a house made peach preserve. Frosted with
+            blackberry buttercream and topped with a fresh blackberry (subject to seasonal availability).</p>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Honey Ginger</h3>
+          <p class="mt-2 text-sm text-gray-700">Delicious honey cake infused with ginger. Filled with a Greek yogurt
+            honey mousse and frosted in a whipped white chocolate ganache. Bump it up with an extra splash of orange
+            zest for an addition burst of flavor (optional).</p>
+        </div>
+      </article>
+
+      <!-- Card 9 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Maple Bacon</h3>
+          <p class="mt-2 text-sm text-gray-700">Vanilla cake with real bacon crumbles inside. Filled and frosted with
+            maple Italian buttercream and topped with real crispy bacon strips.</p>
+        </div>
+      </article>
+
+      <!-- Card 10 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Cherry Lime</h3>
+          <p class="mt-2 text-sm text-gray-700">Lime flavored cake with cherry filling. Topped with cherry lime
+            buttercream and a maraschino cherries.</p>
+        </div>
+      </article>
+
+      <!-- Card 11 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Margarita</h3>
+          <p class="mt-2 text-sm text-gray-700">Contains alcohol, for adults only. Lime flavored cake infused with real
+            tequila. Frosted with tequila lime buttercream and sprinkled with salt.</p>
+        </div>
+      </article>
+
+      <!-- Card 12 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Black Forest</h3>
+          <p class="mt-2 text-sm text-gray-700">Contains alcohol, for adults only. Thin layers of chocolate cake infused
+            with cherry Kirsch. Alternately layered with cherry filling and whipped cream. Frosted in whipped cream and
+            topped with maraschino cherries and chocolate shavings.</p>
+        </div>
+      </article>
+
+      <!-- Card 13 -->
+      <article class="bg-white border rounded-lg overflow-hidden shadow-sm">
+        <div class="p-4">
+          <h3 class="font-semibold">Lucky Clover</h3>
+          <p class="mt-2 text-sm text-gray-700">Contains alcohol, for adults only. Green Velvet cake layered with rich
+            mint chocolate ganache filling. Frosted with Bailey's Irish Cream frosting.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-6 text-sm text-brand-dark-brown">
+      <p>
+        Want a custom version of a signature cake? Contact us to discuss flavors,
+        dietary needs, and custom decor.
+      </p>
+      <a href="/contact"
+        class="inline-block mt-3 bg-brand-teal text-white px-4 py-2 rounded hover:bg-brand-grey-green">Request a
+        quote</a>
+    </div>
+
+  </section>
+</main>
+
+</Page>

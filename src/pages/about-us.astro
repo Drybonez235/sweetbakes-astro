@@ -1,0 +1,140 @@
+---
+import "../styles/global.css";
+
+import Page from "../layouts/index.astro";
+---
+
+<Page
+  page_title="Sweet Bakes Chicago - Our Story, Mission, and Passion for Baking."
+  page_description="Learn about the history of Sweet Bakes Chicago and our dedication to ingredients that are nut free and allergy friendly!"
+>
+
+
+ <section class="w-full">
+  <div class="w-full h-64 md:h-96 bg-gray-100">
+    <img src="christmas_images/christmas-cookie-hero-banner.png" alt="Hero - Sweet Bakes Chicago" class="object-cover w-full h-full" />
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+  <!-- Nut-free notice -->
+  <section class="prose prose-lg">
+    <h1 class="text-3xl font-semibold">We Are A 100% Nut Free Facility!</h1>
+    <p>
+      Sweet Bakes Chicago LLC is a cottage bakery located on the northwest side of Chicago. We
+      currently serve the northwest city and neighboring suburbs.
+    </p>
+
+    <p>
+      Enjoying treats with food allergies can be a challenge.
+      <strong>Sweet Bakes Chicago is a Tree Nut and Peanut FREE Facility.</strong>
+      We take very special care to be sure that all of our ingredients are not only free of all
+      nuts but also not processed in a facility that also processes nuts.
+    </p>
+
+    <p>
+      We also have gluten, dairy, and sugar free options available for select products. Please
+      contact us with any questions — we want to help.
+    </p>
+
+    <p class="text-sm text-gray-600">
+      Our products are produced in a home kitchen that is not inspected by a health department and
+      that may also process common food allergens. If you have safety concerns, contact your local
+      health department. Our facility may contain wheat, milk, soy, egg, and shellfish.
+    </p>
+  </section>
+
+  <!-- About Me -->
+  <section class="bg-brand-light-cream  border rounded-lg p-6 shadow-sm">
+    <div class="prose max-w-none text-gray-800">
+      <!-- Left-floating image (mobile: centered above text) -->
+      <img src="/sara.avif" alt="Sara Williams demure"
+        class="w-40 h-40 object-cover rounded-lg shadow-sm mb-4 block md:float-left md:mr-6 md:mb-2 mx-auto md:mx-0" />
+      <h2 class="text-2xl font-semibold">About Me</h2>
+
+      <p class="mt-3">
+        My name is Sara Williams. I have been baking and decorating treats for over 20 years. I have
+        taken classes with Collette Peters of the Food Network, as well as multiple online classes
+        taught by world renowned decorators and pastry chefs. I first started decorating in high
+        school just to pass time in the summer and quickly grew to love it.
+      </p>
+
+      <p class="mt-3">
+        I am married and have two children, so I’m currently working out of my home in order to spend
+        more time with my family. In 2015, my daughter was diagnosed with a tree nut allergy after
+        having a bad reaction to a pistachio. I quickly realized the need for safe and delicious
+        treats and made Sweet Bakes Chicago a nut free bakery. As the business grows, and my kids get
+        older, I want to expand into a shop outside of my home.
+      </p>
+
+      <!-- Right-floating image near the end of the bio (mobile: centered) -->
+      <img src="/williams-family-roadtrip.avif" alt="Williams Family at the park smiling"
+        class="w-40 h-40 object-cover rounded-lg shadow-sm mt-4 block md:float-right md:ml-6 md:mt-2 mx-auto md:mx-0" />
+
+      <p class="mt-3">
+        We specialize in cakes, cookies, donuts, pies and custom event treats. We carefully select
+        ingredients that are free from nuts and sourced from nut-free manufacturers whenever possible.
+        If you have specific dietary concerns (gluten, dairy, sugar), please let us know — we offer
+        select options and will always work with you to create something safe and delicious.
+      </p>
+
+      <p class="mt-3">
+        Our products are produced in a home kitchen that is not inspected by a health department and
+        that may also process common food allergens. If you have safety concerns, contact your local
+        health department. Our facility may contain wheat, milk, soy, egg, and shellfish.
+      </p>
+
+      <!-- Clear floats before the image row -->
+      <div class="clear-both"></div>
+
+      <!-- 3-up image row -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <img src="williams-children-red-bush.avif" alt="Custom cake example"
+          class="h-full w-auto object-cover rounded-lg shadow-sm" />
+        <img src="williams-family-at-park.avif" alt="Decorated cookies example"
+          class="h-full w-auto object-cover rounded-lg shadow-sm" />
+        <img src="Dlux-and-sara-beach.avif" alt="Cupcakes example" class=" h-autow-auto rounded-lg shadow-sm" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What we make / call to action -->
+  <section class="bg-brand-light-cream border rounded-lg p-6">
+    <h3 class="text-xl font-heading text-brand-brown font-semibold">
+      Cakes, Cookies, Donuts, Pies & More
+    </h3>
+    <p class="mt-3 text-brand-dark-brown">
+      Sweet Bakes Chicago makes treats for all occasions. Please take a look
+      through our portfolio to see what we've done and what we can do, or let us
+      design custom treats for you. The possibilities are endless!
+    </p>
+
+    <div class="mt-6">
+      <a href="/gallery"
+        class="inline-block bg-brand-teal text-white px-4 py-2 rounded hover:bg-brand-grey-green">View Gallery</a>
+      <a href="/contact"
+        class="ml-3 inline-block border border-brand-teal text-brand-teal px-4 py-2 rounded hover:bg-brand-cream">Request
+        a quote</a>
+    </div>
+  </section>
+
+  <!-- Quick links (flavors/pricing) -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <a href="/flavors"
+      class="block p-4 border border-brand-teal rounded-lg bg-brand-cream hover:bg-brand-light-cream hover:shadow">
+      <h4 class="font-heading text-brand-brown font-semibold">Flavors</h4>
+      <p class="mt-2 text-sm text-brand-dark-brown">
+        See our available signature flavors and seasonal options.
+      </p>
+    </a>
+    <a href="/pricing"
+      class="block p-4 border border-brand-teal rounded-lg bg-brand-cream hover:bg-brand-light-cream hover:shadow">
+      <h4 class="font-heading text-brand-brown font-semibold">Pricing</h4>
+      <p class="mt-2 text-sm text-brand-dark-brown">
+        Layer cake and custom treat pricing and details.
+      </p>
+    </a>
+  </section>
+</main>
+</Page>

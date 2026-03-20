@@ -1,0 +1,223 @@
+---
+import "../styles/global.css";
+
+// src/pages/menu.astro
+import { BAKERY_MENU } from '../data/menu';
+
+
+
+import Page from "../layouts/index.astro";
+---
+<Page
+  page_title="Cake Pricing & Size Specifications - Sweet Bakes Chicago."
+  page_description="View our pricing guide for our custom cakes, cup cakes, and other cake creations!"
+>
+
+<main id="content" class="pricing-page max-w-6xl mx-auto px-4 py-10">
+
+  <section id="party-cakes" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Party Cakes</h2>
+
+    <div class="flex justify-center gap-8 pb-2 mb-4 overflow-x-auto" aria-label="Examples of party cakes">
+        <img src="part-cake-star-power.avif" alt="Start power party cake" class="object-cover h-40 rounded shadow-sm flex-shrink-0" />
+        <img src="cake-top-hat.avif" alt="red cake with white dots and yellow flowers"
+          class="object-cover h-40  rounded shadow-sm flex-shrink-0" />
+        <img src="oreo-party-cake.avif" alt="Oreo Party Cake" class="object-cover h-40 rounded shadow-sm flex-shrink-0" />
+        <img src="cake-mothers-day.avif" alt="Mothers day cake" class="object-cover h-40  rounded shadow-sm flex-shrink-0"/>
+        <img src="gold-40th-birthday-cake.png" alt="A celebratory 40th birthday cake, elegantly decorated with gold accents." class="object-cover h-40  rounded shadow-sm flex-shrink-0" />
+    </div>
+    <p class="text-gray-700 mb-2">Cutting the cake is the pincicle of every party. Sweet Bakes ensures 
+      that everyone will be astonished with the look and taste! Order a cake that perfectly matches the theme, 
+      color scheme, and vibe of your party. From classic cakes to the most extravagent designs, 
+      Sweet Bakes has you covered!</p><p> See our pricing chart below for cakes that include a traditional flavor with buttercream frosting and simple decorations. See our <a href="flavors" class="text-indigo-600 hover:underline">Flavors page</a> for a list of traditional and
+      Signature flavors. For custom decorations, designs, flavors, or fillings, request a quote when ordering.*</p>
+    <div class="overflow-x-auto mb-4">
+      <table class="min-w-full bg-white rounded-lg shadow-sm divide-y divide-gray-200 mt-2">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="text-left px-4 py-3 text-sm font-medium text-gray-700">Size</th>
+            <th class="text-left px-4 py-3 text-sm font-medium text-gray-700">Servings</th>
+            <th class="text-left px-4 py-3 text-sm font-medium text-gray-700">Traditional Flavor Price</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700 divide-y divide-gray-100">
+          <tr>
+            <td class="px-4 py-3">6"</td>
+            <td class="px-4 py-3">8-12</td>
+            <td class="px-4 py-3">${BAKERY_MENU["cake-six-inch"].price}</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">8"</td>
+            <td class="px-4 py-3">15-25</td>
+            <td class="px-4 py-3">${BAKERY_MENU["cake-eight-inch"].price}</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">10"</td>
+            <td class="px-4 py-3">30-40</td>
+            <td class="px-4 py-3">${BAKERY_MENU["cake-ten-inch"].price}</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">12"</td>
+            <td class="px-4 py-3">50-60</td>
+            <td class="px-4 py-3">${BAKERY_MENU["cake-twelve-inch"].price}</td>
+          </tr>
+        </tbody>
+      </table>
+       <h2 class="text-2xl font-semibold text-gray-800 mb-3 mt-3">Smash Cakes</h2>
+    <p class="text-gray-700">
+      If you are celebrating a 1st birthday, you can't forget the smash cake! Sweet Bakes wants to celebrate with you by offering a complimentary smash cake.
+      Just mention smash cake when ordering any size regular cake.
+    </p>
+      <div class="mt-4">
+            <a href="/contact"
+                class="inline-block bg-brand-teal text-white px-4 py-2 rounded hover:bg-brand-grey-green">Request a
+                Quote</a>
+        </div>
+    </div>
+  </section>
+
+   <section id="wedding-tiered" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-3">Wedding and Tiered Cakes</h2>
+    <div class="flex justify-center gap-8 pb-2 mb-4 overflow-x-auto" aria-label="Cupcake gallery">
+      <img src="red-tiered-dragon-cake.avif" alt="A beautiful red tiered cake."
+        class="w-44 h-full object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="chicago-city-wedding-cake.avif" alt="A wedding cake decorated with elements inspired by the Chicago city skyline."
+        class="w-44 h-full object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="wedding-rose-tiered-cake.avif" alt="A beautiful tiered wedding cake adorned with delicate rose decorations."
+        class="w-44 h-full object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="the-best-cake-sara-has-ever-made-says-lydia.avif" alt="A beautifully crafted cake, lauded by Lydia as the best Sara has ever made."
+        class="w-44 h-full object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="color-hued-tiered-cake.jpg" alt="A layered cake that features different hues of blue blending into purple."
+        class="w-44 h-full object-cover rounded shadow-sm flex-shrink-0" />
+    </div>
+    <p class="text-gray-700">
+      From traditional ceremonies to the most off the wall unions, Sweet Bakes will provide the wedding cake of your dreams. Let us be the easiest, stress free decision for your big day. Prices for cakes iced and decorated with buttercream frosting start at ${BAKERY_MENU["cake-wedding-icing"].price.toFixed(2)} per serving. Prices for cakes iced and decorated with fondant start at ${BAKERY_MENU["cake-wedding-fondant"].price} per serving.
+    </p>
+     <div class="mt-4">
+            <a href="/contact"
+                class="inline-block bg-brand-teal text-white px-4 py-2 rounded hover:bg-brand-grey-green">Request a
+                Quote</a>
+        </div>
+  </section>
+  
+  <section id="cupcakes" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Cupcakes</h2>
+
+    <div class="flex justify-center gap-8 pb-2 mb-4 overflow-x-auto" aria-label="Cupcake gallery">
+      <img src="pumkin-spice-cupcake.avif" alt="Cupcake pumkin spice"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cup-cake-minis-halloween.avif" alt="Mini halloween cupcakes.avif"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cup-cake-lemon-zest.avif" alt="Cupcakes with lemon zest"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cup-cake-minis-nightmare-before-christmas.avif" alt="Nightmare before Christmas cupcakes 4"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cupcakes-cherry.avif" alt="Cupcake with cherry"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+    </div>
+
+    <p class="text-gray-700 mb-2">Cupcakes make party desserts simple and utensil free! Grab and go with any traditional or signature flavor. Cupcake fillings, custom flavors, and designs available.* Request a quote when ordering.</p>
+   
+    <a class="" href="/contact">
+    <p class="text-2xl font-semibold font-heading text-brand-brown duration-200 hover:scale-101">
+        ${BAKERY_MENU["cupcakes"].price.toFixed(2)} per dozen
+    </p>
+    </a>
+  </section>
+
+  
+  <section id="mini-cupcakes" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Mini Cupcakes</h2>
+    <div class="flex justify-center gap-8 pb-2 mb-4 overflow-x-auto" aria-label="Mini cupcake gallery">
+      <img src="cup-cake-minis-fruit.avif" alt="Mini cupcake with fruit"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="mini-cup-cakes-green.avif" alt="green mini cupcakes"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="mini-cup-cake-white-red.avif" alt="white cup cakes with red filling"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cup-cake-minis-flowers.avif" alt="Mini cupcake 4"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="mini-cup-cakes-with-carmel-drizzle.avif" alt="Mini cupcake with carmel drizzle"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+    </div>
+    <p class="text-gray-700 mb-2">What is more fun than cupcakes? Mini-cupcakes! Perfect for small hands. Custom flavors, and designs available.* Request a quote when ordering.</p>
+    <a class="" href="/contact">
+    <p class="text-2xl font-semibold font-heading text-brand-brown duration-200 hover:scale-101">
+        ${BAKERY_MENU["mini-cupcakes"].price.toFixed(2)} per two dozen
+    </p>
+    </a>
+  </section>
+
+  <section id="cake-pops" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cake Pops</h2>
+
+    <div class="flex justify-center gap-8 pb-2 mb-4 overflow-x-auto" aria-label="Cake pop gallery">
+      <img src="cake-pop-flowers.avif" alt="Cake pop flowers"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cake-pop-rose.avif" alt="Cake pop rose"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cake-pop-unicorn.avif" alt="unicorn cake pop"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cake-pops-blue-yellow.avif" alt="Cake pop 4"
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+      <img src="cake-pops-red-with-yellow-flowers.avif" alt="Red Cake pops with yellow flowers."
+        class="w-44 h-36 object-cover rounded shadow-sm flex-shrink-0" />
+    </div>
+
+      <p class="text-gray-700 mb-2">Cake pops offer the ulimtate grab and go dessert option. No plate, no mess! They come in traditional or customs flavors and can even be custom decorated.* Have them individualy wrapped as a party favor for $5 per dozen extra.</p>
+      <a class="" href="/contact">
+    <p class="text-2xl font-semibold font-heading text-brand-brown duration-200 hover:scale-101">
+        ${BAKERY_MENU["cake-pops"].price.toFixed(2)} per dozen
+    </p>
+    </a>
+  </section>
+
+  <section id="cake-pucks" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cake Pucks</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4" aria-label="Cake pucks examples">
+      <figure class="bg-brand-light-cream rounded overflow-hidden shadow flex flex-col items-center">
+        <img src="new-cake-pucks.avif" alt="New item cake pucks!" class="h-full w-auto object-contain" />
+        <figcaption class="p-3 text-sm text-gray-600">Traditional cake pucks</figcaption>
+      </figure>
+
+      <figure class="bg-white rounded overflow-hidden shadow flex flex-col items-center">
+        <img src="cake-puck-anatomy.avif" alt="Anatomy of a cake puck" class="h-full w-auto object-contain" />
+        <figcaption class="p-3 text-sm text-gray-600">Filled signature pucks</figcaption>
+      </figure>
+    </div>
+
+    <p class="text-gray-700 mb-2">
+      Try our new cake pucks! A thick chocolate shell with moist cake inside. You choose from classic or signature flavors!* Surprise your guests with a cake filling for $5 extra per dozen.</p> 
+       <a class="" href="/contact">
+    <p class="text-2xl font-semibold font-heading text-brand-brown duration-200 hover:scale-101">
+        ${BAKERY_MENU["cake-pucks"].price.toFixed(2)} per dozen
+    </p>
+    </a>
+  </section>
+  
+
+  <section id="delivery" class="mb-10 bg-white shadow-sm rounded-lg p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-3">Delivery</h2>
+    <p class="text-gray-700 mb-4">
+      There is a <span class="font-medium">$10.00</span> minimum charge for all products delivered.
+      See map below for approximate delivery fees. Pricing subject to change
+      depending on traffic times and current gas prices.
+    </p>
+
+    <div class="w-full bg-gray-50 rounded overflow-hidden shadow-inner flex flex-col items-center">
+      <img src="delivery-map.avif" alt="Delivery area map" class="" />
+    </div>
+  </section>
+
+  <section id="fine-print" class="text-sm text-gray-600">
+    <p>
+      *Prices may vary. Prices listed include basic buttercream frosting and
+      filling. There may be extra charges for variations or ingredients. All
+      pricing is subject to degree of difficulty and supplies needed. Please
+      contact us for more specific information.
+    </p>
+  </section>
+</main>
+
+</Page>
