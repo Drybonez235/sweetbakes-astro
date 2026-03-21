@@ -4,8 +4,8 @@ import Footer from '../components/Footer.astro'
 import SEO from '../components/SEO.astro';
 
 
-const { page_title = "default" } = Astro.props;
-const { page_description = "default"} = Astro.props;
+const { title = "default" } = Astro.props;
+const { description = "default"} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ const { page_description = "default"} = Astro.props;
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <SEO {page_title} {page_description}  />
+  <SEO {title} {description}  />
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
