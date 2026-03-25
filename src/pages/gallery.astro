@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Page from "../layouts/index.astro";
+import CTA from "../components/CallToAction.astro"
 ---
 
 <Page
@@ -9,9 +10,22 @@ import Page from "../layouts/index.astro";
   description="Explore the different cakes we have made over the years and let it inspire your next cake design!"
 >
 
-<main>
-    <section class="photo-grid-section p-24">
-      <h2 class="text-2xl font-bold mb-4 text-center">Our Creations</h2>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <header class="max-w-3xl mx-auto text-center mb-16 space-y-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--color-brand-brown)]">
+        Our Creations
+      </h1>
+      
+      <p class="text-lg text-[var(--color-brand-dark-brown)] leading-relaxed">
+        From intricately decorated sugar cookies to our signature fluffy donuts, every treat at 
+        <strong>Sweet Bakes Chicago</strong> is a work of art. We specialize in creating 
+        custom desserts for weddings, birthdays, and special events across the Chicago area.
+      </p>
+
+    </header>
+   
+
+    <section class="photo-grid-section">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 	<div class="relative group overflow-hidden rounded-lg shadow-md h-64 flex items-center justify-center">
           <img
@@ -301,6 +315,33 @@ import Page from "../layouts/index.astro";
           />
         </div> </div>
     				</section>
+             <section class="mt-4 p-8 md:p-12 bg-[var(--color-brand-cream)] rounded-3xl text-center">
+  <h3 class="text-3xl font-heading text-[var(--color-brand-brown)] mb-4">
+    Want to see what's fresh out of the oven?
+  </h3>
+  <p class="max-w-2xl mx-auto mb-8 text-[var(--color-brand-dark-brown)] text-lg">
+    We are constantly posting our latest custom cookies, seasonal donut flavors, and behind-the-scenes magic. 
+    Follow us to stay inspired for your next celebration!
+  </p>
+  
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+    <CTA 
+      message="Follow us on Instagram" 
+      url="https://www.instagram.com/sweetbakeschicago/"
+      variant="primary" 
+      size="lg" 
+      isExternal={true} 
+    />
+    <CTA 
+      message="Join us on Facebook" 
+      url=https://www.facebook.com/sweetbakeschicago
+      variant="secondary" 
+      size="lg" 
+      isExternal={true} 
+    />
+  </div>
+
+</section>
   					</main>
 				
 

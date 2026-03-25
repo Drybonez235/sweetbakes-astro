@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { BAKERY_MENU } from '../data/menu';
+
 import Page from "../layouts/index.astro";
 ---
 
@@ -15,40 +16,36 @@ import Page from "../layouts/index.astro";
 </section>
 
 <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-  <section class="bg-white rounded-lg p-6 text-center">
-    <h1 class="text-3xl font-semibold mb-2">Donuts</h1>
-    <p class="text-lg font-medium text-rose-600 mb-3">Sold by the dozen · Made FRESH TO ORDER</p>
-    <p class="text-sm text-gray-700">We make all donuts to order. Please contact us for availability, custom requests,
-      or rush orders.</p>
-    <p class="text-sm text-gray-700 ">Note: Donuts are best served the day they're made — order for same-day pickup or
-      scheduled delivery.</p>
-
+   <section class="prose lg:prose-lg">
+    <h1 class="text-3xl font-semibold">Fresh Made Donuts</h1>
+    <p>Our donuts are made in our nut-free facility. We make all donuts to order. Please contact us for availability, custom requests,
+      or rush orders. Donuts are best eaten the day they are made and so we can only gaurentee freshness the day of pick up or delivery.</p>
   </section>
-
-  <section class="bg-white border rounded-lg p-6 shadow-sm">
+  
+  <section class="bg-white rounded-lg p-6 shadow-sm">
+  
     <h2 class="text-2xl font-semibold mb-4">Donut Types</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-      <div>
-        <h3 class="font-semibold mb-2">Fried Cake Donuts</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <p class="mb-4 text-gray-700">Our donuts are hand made to order. Enjoy a fresh yeast donut or a moist cake donut. They can be enjoyed as donut rings or as donut holes. For more flavor, add one of our signature fillings!</p> 
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Fried Cake Donuts</h4>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
           <li>Vanilla</li>
           <li>Chocolate</li>
           <li>Red Velvet</li>
           <li>Apple Cider</li>
-        </ul>
+       </ul>
       </div>
 
-      <div>
-        <h3 class="font-semibold mb-2">Traditional Yeast</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
+      <div class="p-3 border rounded bg-brand-light-cream">
+        <h4 class="font-semibold">Traditional Yeast</h4>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
           <li>Ring</li>
           <li>Filled<span class="text-gray-400">+</span></li>
         </ul>
-      </div>
+      </div>  
     </div>
   </section>
-
-
   <!-- Images -->
   <section class="bg-white rounded-lg p-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -60,10 +57,11 @@ import Page from "../layouts/index.astro";
       <img src="/powedered-donut.avif" alt="Powdered donut" class="w-full h-36 object-cover rounded shadow-sm" />
     </div>
   </section> <!-- Frostings and toppings -->
+
   <section class="bg-white border rounded-lg p-6 shadow-sm">
     <h2 class="text-2xl font-semibold mb-4">Frostings and Toppings</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div>
+      <div class="p-3 border rounded bg-brand-light-cream">
         <h3 class="font-semibold mb-2">Traditional Glaze Frostings</h3>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
           <li>Vanilla</li>
@@ -75,7 +73,7 @@ import Page from "../layouts/index.astro";
         </ul>
       </div>
 
-      <div>
+      <div class="p-3 border rounded bg-brand-light-cream">
         <h3 class="font-semibold mb-2">Sugars / Toppings</h3>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
           <li>Cinnamon</li>
@@ -86,7 +84,7 @@ import Page from "../layouts/index.astro";
         </ul>
       </div>
 
-      <div>
+      <div class="p-3 border rounded bg-brand-light-cream">
         <h3 class="font-semibold mb-2">Additional Toppings<span class="text-gray-400">+</span></h3>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
           <li>Sprinkles<span class="text-gray-400">++</span></li>
@@ -98,11 +96,12 @@ import Page from "../layouts/index.astro";
       </div>
     </div>
   </section> <!-- Fillings -->
+
   <section class="bg-white border rounded-lg p-6 shadow-sm">
     <h2 class="text-2xl font-semibold mb-4">Fillings</h2>
     <p class="text-gray-700 mb-3">We offer fruit preserves and other fillings — other fillings may be available upon
       request.</p>
-
+       <div class="p-3 border rounded bg-brand-light-cream">
     <ul class="list-disc list-inside text-gray-700 space-y-1">
       <li>Strawberry</li>
       <li>Raspberry</li>
@@ -110,10 +109,13 @@ import Page from "../layouts/index.astro";
       <li>Peach</li>
       <li>Cherry</li>
     </ul>
-  </section> <!-- Pricing -->
+    </div>
+  </section> 
+  
+  <!-- Pricing -->
   <section class="bg-white border rounded-lg p-6 shadow-sm">
     <h2 class="text-2xl font-semibold mb-4">Pricing</h2>
-    <p class="text-sm text-gray-600 mb-4">Pricing is per dozen. Special toppings/fillings may have additional charges.
+    <p class=" text-gray-700 mb-4">Pricing is per dozen. Special toppings/fillings may have additional charges.
       Please contact us for specific pricing.</p>
 
     <div class="overflow-x-auto">
@@ -134,7 +136,7 @@ import Page from "../layouts/index.astro";
             <td class="px-4 py-3 text-right font-medium">${BAKERY_MENU["filled-donuts"].price.toFixed(2)}</td>
           </tr>
           <tr>
-            <td class="px-4 py-3">Mini Donuts <span class="text-sm text-gray-500">+++ (2 dozen minimum)</span></td>
+            <td class="px-4 py-3">Mini Donuts <span class="text-sm">+++ (2 dozen minimum)</span></td>
             <td class="px-4 py-3 text-right font-medium">${BAKERY_MENU["mini-donuts"].price.toFixed(2)}</td>
           </tr>
         </tbody>
