@@ -1,0 +1,65 @@
+---
+interface Props {
+  pageName: string;
+  image: string;
+  alt: string;
+  height: number;
+  width: number;
+}
+
+const { pageName, image, alt, height, width } = Astro.props;
+---
+
+<section class="relative w-full h-[calc(100vh-80px)] overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src={image} alt={alt} height={height} width={width} loading="eager" class="w-full h-full object-cover sm:object-[45%_75%] brightness-75" />
+    <div class="absolute inset-0 bg-black/20"></div>
+  </div>
+
+  <div class="relative z-10 pt-12 pl-8 md:pl-16">
+    <div class="flex flex-col">
+      <span class="font-heading text-brand-cream text-2xl md:text-4xl tracking-tighter drop-shadow-md">
+        Sweet Bakes
+      </span>
+      
+      <div class="cursive-container pt-2 pb-6 pr-10">
+        <h1 class="page-title text-brand-teal! text-5xl md:text-7xl xl:text-9xl">
+          {pageName}
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+  .font-heading {
+    font-family: var(--font-heading); /* Merriweather from your global.css */
+  }
+
+  .page-title {
+    font-family: 'Tangerine', cursive;
+    position: relative;
+    display: inline-block;
+    line-height: 1.5;
+    white-space: nowrap;
+    /* The "Drawing" Animation using a clip-path mask */
+    animation: drawIn 2s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+  }
+
+  @keyframes drawIn {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+
+  @keyframes penMove {
+    from { right: 100%; opacity: 1; }
+    to { right: 0%; opacity: 0; }
+  }
+</style>

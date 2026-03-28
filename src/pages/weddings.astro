@@ -1,0 +1,199 @@
+---
+import "../styles/global.css";
+import PageHero from "../components/PageHero.astro"
+
+import Index from "../layouts/index.astro";
+const steps = [
+  { title: "Consultation", desc: "We meet to discuss your vision, flavors, and guest count." },
+  { title: "Tasting Box", desc: "Sample our most popular pairings in the comfort of your home." },
+  { title: "Design & Delivery", desc: "We finalize the details and handle the setup on your big day." }
+];
+
+const galleryImages = [
+  "/red-tiered-dragon-cake.avif",
+  "/wedding-rose-tiered-cake.avif",
+  "/chicago-city-wedding-cake.avif",
+  "/color-hued-tiered-cake.jpg"
+];
+
+const products = [
+  {
+    title: "Cupcakes",
+    desc: "Perfect for bridal showers or as a tiered alternative to a traditional cake.",
+    image: "/cup-cake-lemon-zest.avif",
+    link: "/pricing#cupcakes"
+  },
+  {
+    title: "Cookies",
+    desc: "Custom hand-painted sugar cookies that double as beautiful wedding favors.",
+    image: "/valentines-decorated-cookies-sweet-tarts.avif",
+    link: "/decorated-cookies/"
+  },
+  {
+    title: "Cake Pops",
+    desc: "A modern fan favorite. Great for late-night snacks or a unique dessert wall.",
+    image: "/valentines-day-rose-cake-pops.avif",
+    link: "/donuts"
+  }
+];
+---
+
+<Index 
+title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
+  description="S"
+>
+<PageHero 
+pageName="Weddings"
+image="/wedding-hero.avif"
+alt="A four tiered wedding cake with white icing and cranberry and leaf accents."
+height={1280}
+width={1920}
+/>
+<section class="grid grid-cols-1 lg:grid-cols-2 h-8/10 w-full overflow-hidden py-4">
+  
+  <div class="relative hidden md:block sm:h-full w-full group overflow-hidden bg-brand-dark-brown rounded-3xl mx-8">
+    <div id="carousel-track" class="flex h-full w-full transition-transform duration-700 ease-in-out">
+      {galleryImages.map((src) => (
+        <div class="min-w-full h-full">
+          <img src={src} alt="Wedding Cake" class="w-full h-full object-cover" />
+        </div>
+      ))}
+    </div>
+
+    <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-brand-cream/20 hover:bg-brand-cream/40 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-brand-cream/20 hover:bg-brand-cream/40 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+      {galleryImages.map((_, i) => (
+        <div class="carousel-dot w-2 h-2 rounded-full bg-brand-cream/50 transition-all" data-index={i}></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="bg-brand-cream flex flex-col justify-center p-8 md:p-16 lg:p-20 overflow-y-auto">
+    <h2 class="font-heading text-4xl md:text-5xl text-brand-brown mb-6">
+      The Wedding Process
+    </h2>
+    
+    <p class="font-body text-brand-dark-brown text-lg mb-10 leading-relaxed">
+      Creating your dream wedding cake should be as sweet as the first bite. At Sweet Bakes, 
+      we work closely with couples to ensure every tier reflects your unique love story.
+    </p>
+
+    <ul class="space-y-8 mb-12 ">
+      {steps.map((step, i) => (
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-10 h-10 rounded-full border-2 border-brand-teal text-brand-teal flex items-center justify-center font-bold font-heading">
+            {i + 1}
+          </span>
+          <div>
+            <h3 class="font-heading text-xl text-brand-brown mb-1">{step.title}</h3>
+            <p class="font-body text-brand-grey-green leading-snug">{step.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <a 
+      href="/contact" 
+      class="inline-block bg-brand-terracotta text-brand-cream font-heading text-lg tracking-wide text-center py-4 px-10 rounded-sm hover:bg-brand-dark-brown transition-all shadow-md self-start"
+    >
+      Inquire Now
+    </a>
+  </div>
+</section>
+
+<section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen w-full bg-brand-cream">
+  
+  <div class="bg-brand-cream flex flex-col justify-center p-8 md:p-16 lg:p-24">
+    <h2 class="font-heading text-4xl md:text-5xl text-brand-brown mb-6">
+      Beyond the Big Day
+    </h2>
+    <p class="font-body text-brand-dark-brown text-lg mb-6 leading-relaxed">
+      From the moment you say "Yes" to the final "Thank You," we provide custom sweets for every celebration along the way.
+    </p>
+    
+    <ul class="space-y-4 mb-10 font-body text-brand-brown/80 italic">
+      <li>• Engagement Parties & Styled Shoots</li>
+      <li>• Bridal Showers & Bachelorette Weekends</li>
+      <li>• Rehearsal Dinners & Welcome Bags</li>
+      <li>• Day-After Brunches</li>
+    </ul>
+
+    <a 
+      href="/contact" 
+      class="inline-block bg-brand-terracotta text-brand-cream font-heading text-center py-4 px-10 rounded-sm hover:bg-brand-dark-brown transition-colors shadow-md self-start"
+    >
+      Book Your Event
+    </a>
+  </div>
+
+  <div class="bg-brand-cream p-6 md:p-12 lg:p-16 flex flex-col justify-center gap-6">
+    {products.map((item) => (
+      <div class="flex flex-row bg-brand-light-cream rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-brown/5 h-40 md:h-48">
+        <div class="w-1/3 h-full">
+          <img 
+            src={item.image} 
+            alt={item.title} 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div class="w-2/3 p-4 md:p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="font-heading text-xl md:text-2xl text-brand-brown mb-1">{item.title}</h3>
+            <p class="font-body text-sm md:text-base text-brand-grey-green line-clamp-2">
+              {item.desc}
+            </p>
+          </div>
+          
+          <a 
+            href={item.link} 
+            class="text-brand-terracotta font-bold text-xs md:text-sm uppercase tracking-wider hover:text-brand-dark-brown transition-colors flex items-center gap-1"
+          >
+            See Examples 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const slides = track?.children;
+  const dots = document.querySelectorAll('.carousel-dot');
+  let currentIndex = 0;
+
+  function updateCarousel(index) {
+    if (!track) return;
+    currentIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.style.opacity = i === index ? '1' : '0.5';
+      dot.style.width = i === index ? '24px' : '8px';
+    });
+  }
+
+  document.getElementById('next')?.addEventListener('click', () => {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    updateCarousel(nextIndex);
+  });
+
+  document.getElementById('prev')?.addEventListener('click', () => {
+    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel(prevIndex);
+  });
+
+  // Initial state
+  updateCarousel(0);
+</script>
+
+</Index>

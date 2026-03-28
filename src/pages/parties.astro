@@ -1,0 +1,198 @@
+---
+import "../styles/global.css";
+import PageHero from "../components/PageHero.astro"
+
+import Index from "../layouts/index.astro";
+
+const galleryImages = [
+  "/wicked-the-musical-birthday-cake.avif",
+  "/stranger-things-birthday-cake.avif",
+  "/purple-unicorn-birthday-cake.avif",
+  "/red-spider-birthday-cake.avif"
+];
+
+const products = [
+  {
+    title: "Cupcakes",
+    desc: "Give everyone their own piece of the party with decorated cupcakes!",
+    image: "/cupcake-party.avif",
+    link: "/pricing#cupcakes"
+  },
+  {
+    title: "Cookies",
+    desc: "Custom hand-decorated cookies that can be customized to match your party theme!",
+    image: "/decorated-cookie-race-cars.avif",
+    link: "/decorated-cookies/"
+  },
+  {
+    title: "Cake Pops",
+    desc: "The ultimate grab and go option. Perfect for party favors and goodbye thank you's.",
+    image: "/cake-pop-unicorn.avif",
+    link: "/pricing#cake-pops"
+  }
+];
+---
+
+<Index 
+title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
+  description="S"
+>
+<PageHero 
+pageName="Birthdays"
+image="/race-car-birthday-cake.avif"
+alt="A four tiered wedding cake with white icing and cranberry and leaf accents."
+height={1280}
+width={1920}
+/>
+<section class="grid grid-cols-1 lg:grid-cols-2 h-auto w-full overflow-hidden py-12 items-center gap-8">
+  
+  <div class="relative hidden md:block mx-auto group overflow-hidden bg-brand-cream rounded-3xl max-w-xl ">
+    
+    <div id="carousel-track" class="flex aspect-[3/4] w-full transition-transform duration-700 ease-in-out">
+      {galleryImages.map((src) => (
+        <div class="min-w-full h-full">
+          <img 
+            src={src} 
+            alt="Sweet Bakes Chicago Cake" 
+            class="w-full h-full object-cover" 
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+    <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-brand-cream/60 hover:bg-brand-brown text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-50 shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    
+    <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-brand-cream/60 hover:bg-brand-brown text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-50 shadow-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+      {galleryImages.map((_, i) => (
+        <div 
+          class="carousel-dot w-2 h-2 rounded-full bg-brand-cream/80 transition-all cursor-pointer border border-brand-dark-brown/20" 
+          data-index={i}
+        ></div>
+      ))}
+    </div>
+  </div>
+
+  
+
+   
+  
+  <div class="bg-brand-cream flex flex-col justify-center p-8 md:p-16 lg:p-20 overflow-y-auto">
+    <h2 class="font-heading text-4xl md:text-5xl text-brand-brown mb-6">
+      An unforgetable birthday
+    </h2>
+    
+    <p class="font-body text-brand-dark-brown text-lg mb-10 leading-relaxed">
+      We make cakes that match any birthday theme! If you can imagine it, we can bake it. Choose from any
+      of our cake flavors and fillings, and share your vision for what you want your cake to look like. We will take 
+      care of the rest. 
+
+    </p>
+
+    
+
+    <a 
+      href="/contact" 
+      class="inline-block bg-brand-terracotta text-brand-cream font-heading text-lg tracking-wide text-center py-4 px-10 rounded-sm hover:bg-brand-dark-brown transition-all shadow-md self-start"
+    >
+      Inquire Now
+    </a>
+  </div>
+</section>
+
+<section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen w-full bg-brand-cream">
+  
+  <div class="bg-brand-cream flex flex-col justify-center p-8 md:p-16 lg:p-24">
+    <h2 class="font-heading text-4xl md:text-5xl text-brand-brown mb-6">
+    More Birthday Treats
+    </h2>
+    <p class="font-body text-brand-dark-brown text-lg mb-6 leading-relaxed">
+      There is more to a party than just cake. Try any of our custom made cookies, delicious cupcakes, or even birthday donuts!
+    </p>
+    
+    <ul class="space-y-4 mb-10 font-body text-brand-brown/80 italic">
+      <li>• Cookies with the names of your party gusts</li>
+      <li>• Cupcakes as an easy way for everyone to enjoy cake</li>
+      <li>• Fresh baked donuts for light and fluffy treats</li>
+      <li>• Sophisticated macarons for more formal occasions</li>
+    </ul>
+
+    <a 
+      href="/contact" 
+      class="inline-block bg-brand-terracotta text-brand-cream font-heading text-center py-4 px-10 rounded-sm hover:bg-brand-dark-brown transition-colors shadow-md self-start"
+    >
+      Book Your Event
+    </a>
+  </div>
+
+  <div class="bg-brand-cream p-6 md:p-12 lg:p-16 flex flex-col justify-center gap-6">
+    {products.map((item) => (
+      <div class="flex flex-row bg-brand-light-cream rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-brown/5 h-40 md:h-48">
+        <div class="w-1/3 h-full">
+          <img 
+            src={item.image} 
+            alt={item.title} 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div class="w-2/3 p-4 md:p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="font-heading text-xl md:text-2xl text-brand-brown mb-1">{item.title}</h3>
+            <p class="font-body text-sm md:text-base text-brand-grey-green line-clamp-2">
+              {item.desc}
+            </p>
+          </div>
+          
+          <a 
+            href={item.link} 
+            class="text-brand-terracotta font-bold text-xs md:text-sm uppercase tracking-wider hover:text-brand-dark-brown transition-colors flex items-center gap-1"
+          >
+            See Examples 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const slides = track?.children;
+  const dots = document.querySelectorAll('.carousel-dot');
+  let currentIndex = 0;
+
+  function updateCarousel(index) {
+    if (!track) return;
+    currentIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.style.opacity = i === index ? '1' : '0.5';
+      dot.style.width = i === index ? '24px' : '8px';
+    });
+  }
+
+  document.getElementById('next')?.addEventListener('click', () => {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    updateCarousel(nextIndex);
+  });
+
+  document.getElementById('prev')?.addEventListener('click', () => {
+    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel(prevIndex);
+  });
+
+  // Initial state
+  updateCarousel(0);
+</script>
+
+</Index>
