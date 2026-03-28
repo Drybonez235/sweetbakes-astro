@@ -1,331 +1,181 @@
----
-
----
-
-<header class="bg-brand-light-cream shadow-sm">
+<header class="bg-brand-light-cream shadow-sm relative z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Logo (centered) -->
-    <div class="flex justify-center py-6">
-      <a href="/" class="flex items-center gap-3">
-        <img
-          src="/sweet-bakes-logo-nobg.avif"
-          alt="Sweet Bakes Chicago"
-          class="h-96 w-auto object-contain"
-        />
+    <nav class="flex items-center justify-between py-4">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img src="/sweet-bakes-logo-nobg.avif" class="h-24 md:h-36 w-auto" />
       </a>
-    </div>
 
-    <!-- Mobile navigation-->
-    <nav class="md:hidden" aria-label="Mobile navigation">
-      <div class="flex items-start">
-        <!-- LEFT COLUMN -->
-        <ul role="menu" class="flex-1 space-y-2 text-gray-700">
-          <li>
-            <a
-              href="/"
-              role="menuitem"
-              class="block w-full px-4 py-2 rounded transition-colors duration-150
-                  text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                  focus:bg-gray-100 focus:text-gray-900"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about-us"
-              role="menuitem"
-              class="block w-full px-4 py-2 rounded transition-colors duration-150
-                  text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                  focus:bg-gray-100 focus:text-gray-900"
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="/gallery"
-              role="menuitem"
-              class="block w-full px-4 py-2 rounded transition-colors duration-150
-                  text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                  focus:bg-gray-100 focus:text-gray-900"
-            >
-              Gallery
-            </a>
-          </li>
-          <li>
-            <a
-              href="/contact"
-              role="menuitem"
-              class="block w-full px-4 py-2 rounded transition-colors duration-150
-                  text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                  focus:bg-gray-100 focus:text-gray-900"
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
+      <!-- Desktop Nav -->
+     <ul class="hidden md:flex gap-8 items-center text-brand-dark-brown font-body">
+  <li><a href="/" class="hover:text-brand-terracotta transition-colors">Home</a></li>
+  <li><a href="/about-us" class="hover:text-brand-terracotta transition-colors">About</a></li>
 
-        <!-- RIGHT COLUMN (products, grouped) -->
-        <ul role="menu" class="flex-1 space-y-4 text-gray-70 mb-2">
-          <!-- Cake group: flavors + pricing (closer together) -->
-          <li class="border-l">
-            <ul>
-              <li>
-                <a
-                  href="/flavors"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                      text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                      focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Cake Flavors
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/pricing"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                      text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                      focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Cake Pricing
-                </a>
-              </li>
-            </ul>
-          </li>
+  <li class="relative group">
+    <button class="flex items-center gap-1 hover:text-brand-terracotta transition-colors">
+      Products
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+    <ul class="absolute left-0 mt-2 w-48 bg-brand-light-cream border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400">
+      <li><a href="/flavors" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Cake Flavors</a></li>
+      <li><a href="/pricing" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Cake Pricing</a></li>
+      <li><a href="/traditional-cookies" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Traditional Cookies</a></li>
+      <li><a href="/decorated-cookies" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Decorated Cookies</a></li>
+      <li><a href="/macarons" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Macarons</a></li>
+      <li><a href="/donuts" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Donuts</a></li>
+      <li><a href="/pies" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Pies</a></li>
+    </ul>
+  </li>
 
-          <!-- Cookies group: closer together -->
-          <li class="border-l">
-            <ul class="">
-              <li>
-                <a
-                  href="/traditional-cookies"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                      text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                      focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Traditional Cookies
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/decorated-cookies"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                      text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                      focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Decorated Cookies
-                </a>
-              </li>
-            </ul>
-          </li>
+  <li class="relative group">
+    <button class="flex items-center gap-1 hover:text-brand-terracotta transition-colors">
+      Events
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+    <ul class="absolute left-0 mt-2 w-48 bg-brand-light-cream border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ">
+      <li><a href="/weddings" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Weddings</a></li>
+      <li><a href="/parties" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Parties</a></li>
+    </ul>
+  </li>
 
-          <!-- Donut + Pie + Macrons group (very close together) -->
-          <li>
-            <ul class="border-l">
-              <li>
-                <a
-                  href="/macarons"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                  text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                  focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Macarons
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/donuts"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                      text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                      focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Donuts
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/pies"
-                  role="menuitem"
-                  class="block w-full px-4 py-5 rounded transition-colors duration-150
-                      text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                      focus:bg-gray-100 focus:text-gray-900"
-                >
-                  Pies
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Desktop Nav-->
-    <nav
-      class="hidden md:visible md:flex justify-center border-t pt-4 pb-4"
-      aria-label="Main"
-    >
-      <ul class="md:flex gap-10 text-gray-700 items-center">
-        <li>
-          <a
-            href="/"
-            class="px-2 py-1 rounded transition-colors duration-150
-                   text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                   focus:bg-gray-100 focus:text-gray-900"
-            >Home</a
-          >
-        </li>
+  <li><a href="/gallery" class="hover:text-brand-terracotta transition-colors">Gallery</a></li>
+  <li><a href="/contact" class="hover:text-brand-terracotta transition-colors">Contact</a></li>
+</ul>
 
-        <li>
-          <a
-            href="/about-us"
-            class="px-2 py-1 rounded transition-colors duration-150
-                   text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                   focus:bg-gray-100 focus:text-gray-900"
-            >About Us</a
-          >
-        </li>
+      <!-- Mobile Button -->
+      <button id="menu-btn" class="md:hidden z-50">
+        <!-- Hamburger -->
+        <svg id="icon-open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
 
-        <li>
-          <a
-            href="/gallery"
-            class="px-2 py-1 rounded transition-colors duration-150
-                   text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                   focus:bg-gray-100 focus:text-gray-900"
-            >Gallery</a
-          >
-        </li>
-
-        <!-- Products dropdown using details/summary (no JS) -->
-        <li class="relative">
-          <details class="group relative">
-            <summary
-              class="flex items-center gap-2 px-2 py-1 rounded transition-colors duration-150
-             text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none
-             cursor-pointer list-none"
-              aria-haspopup="true"
-            >
-              Products
-              <svg
-                class="w-4 h-4 text-current"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.06 0l-4.25-4a.75.75 0 01-.02-1.06z" clip-rule="evenodd"></path>
-              </svg>
-            </summary>
-
-            <!-- Main dropdown: anchored to bottom of trigger -->
-            <div
-              class="dropdown absolute left-1/2 top-full transform translate-x-12 translate-y-1
-             w-48 bg-white border rounded-md shadow-lg py-2 z-30
-             opacity-0 invisible pointer-events-none transition-all duration-150"
-              role="menu"
-              aria-label="Products"
-            >
-              <!-- Cakes (nested details for click-to-open on touch) -->
-              <details id="details-cakes" class="group relative">
-                <summary
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                 hover:bg-gray-100 hover:text-gray-900 cursor-pointer list-none"
-                >
-                  Cakes
-                </summary>
-
-                <div
-                  class="submenu absolute left-full top-0 -ml-px w-44 bg-white border rounded-md
-                 shadow-md py-2 z-40 translate-x-05 opacity-0 invisible pointer-events-none
-                 transition-all duration-150"
-                  role="menu"
-                  aria-label="Cakes"
-                >
-                  <a
-                    href="/flavors"
-                    class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                    hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                    role="menuitem">Flavors</a
-                  >
-                  <a
-                    href="/pricing"
-                    class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                    hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                    role="menuitem">Pricing</a
-                  >
-                </div>
-              </details>
-
-              <!-- Cookies (nested details) -->
-              <details id="details-cookies" class="group relative">
-                <summary
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                 hover:bg-gray-100 hover:text-gray-900 cursor-pointer list-none"
-                >
-                  Cookies
-                </summary>
-
-                <div
-                  class="submenu absolute left-full top-0 -ml-px w-44 bg-white border rounded-md
-                 shadow-md py-2 z-40 translate-x-05 opacity-0 invisible pointer-events-none
-                 transition-all duration-150"
-                  role="menu"
-                  aria-label="Cookies"
-                >
-                  <a
-                    href="/traditional-cookies"
-                    class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                    hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                    role="menuitem">Traditional Cookies</a
-                  >
-                  <a
-                    href="/decorated-cookies"
-                    class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                    hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                    role="menuitem">Decorated Cookies</a
-                  >
-                  <a
-                    href="/macarons"
-                    class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                    hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                    role="menuitem">Macarons</a
-                  >
-                </div>
-              </details>
-
-              <!-- Donuts -->
-              <a
-                href="/donuts"
-                class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                role="menuitem">Donuts</a
-              >
-
-              <!-- Pies -->
-              <a
-                href="/pies"
-                class="block px-4 py-2 text-sm text-gray-700 transition-colors duration-150
-                hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900"
-                role="menuitem">Pies</a
-              >
-            </div>
-          </details>
-        </li>
-
-        <li>
-          <a
-            href="/contact"
-            class="px-2 py-1 rounded transition-colors duration-150
-                   text-gray-700 hover:bg-gray-100 hover:text-gray-900
-                   focus:bg-gray-100 focus:text-gray-900"
-            >Contact</a
-          >
-        </li>
-      </ul>
+        <!-- Close -->
+        <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </nav>
   </div>
 </header>
+
+<div id="mobile-menu"
+  class="fixed inset-0 bg-brand-cream z-40 hidden md:hidden flex flex-col justify-center text-2xl font-heading text-brand-dark-brown"
+>
+
+  <!-- MAIN MENU -->
+  <div id="menu-main" class="menu-panel flex flex-col space-y-6 content-center items-center justify-center">
+    <a href="/" class="mobile-link">HOME</a>
+    <a href="/about-us" class="mobile-link">ABOUT</a>
+
+    <div class="space-y-6 content-center items-center justify-center">
+    <button class="menu-open block ml-11 " data-menu="products">PRODUCTS</button>
+    <button class="menu-open block ml-11" data-menu="events">EVENTS</button>
+    </div>
+
+    <a href="/gallery" class="mobile-link ml-8">GALLERY</a>
+    <a href="/contact" class="mobile-link ml-8">CONTACT</a>
+
+    <div class="absolute bottom-24 w-3/4 h-8 px-4 bg-brand-teal rounded-2xl">
+    <button id="close" class="w-full">Back</button>
+      </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div id="menu-products" class="menu-panel hidden flex flex-col space-y-6 justify-center items-center mt-16">
+
+    <a href="/flavors" class="mobile-link">Cake Flavors</a>
+    <a href="/pricing" class="mobile-link">Cake Pricing</a>
+    <a href="/traditional-cookies" class="mobile-link">Traditional Cookies</a>
+    <a href="/decorated-cookies" class="mobile-link">Decorated Cookies</a>
+    <a href="/macarons" class="mobile-link">Macarons</a>
+    <a href="/donuts" class="mobile-link">Donuts</a>
+    <a href="/pies" class="mobile-link">Pies</a>
+
+    <div class="absolute bottom-24   bg-brand-teal rounded-2xl w-3/4 h-8 px-4">
+    <button class="menu-back w-full">← Back</button>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <div id="menu-events" class="menu-panel hidden flex flex-col  space-y-6 justify-center items-center">
+    <!-- <button class="menu-back">← Back</button> -->
+
+    <a href="/weddings" class="mobile-link">Weddings</a>
+    <a href="/parties" class="mobile-link">Parties</a>
+
+    <div class="absolute bottom-24  bg-brand-teal rounded-2xl w-3/4 h-8 px-4">
+    <button class="menu-back w-full">← Back</button>
+    </div>
+  </div>
+
+
+</div>
+
+<script is:inline>
+  const setupMenu = () => {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('menu-btn');
+    const closebtn = document.getElementById('close'); 
+
+    const openIcon = document.getElementById('icon-open');
+    const closeIcon = document.getElementById('icon-close');
+
+    const panels = document.querySelectorAll('.menu-panel');
+    const openBtns = document.querySelectorAll('.menu-open');
+    const backBtns = document.querySelectorAll('.menu-back');
+    const links = document.querySelectorAll('.mobile-link');
+
+    if (!menu || !btn) return;
+
+    const showPanel = (id) => {
+      panels.forEach(p => p.classList.add('hidden'));
+      document.getElementById(`menu-${id}`).classList.remove('hidden');
+    };
+
+    const openMenu = () => {
+      menu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+
+      openIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+
+      showPanel('main');
+    };
+
+    const closeMenu = () => {
+      menu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+
+      openIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    };
+
+    const toggleMenu = () => {
+      menu.classList.contains('hidden') ? openMenu() : closeMenu();
+    };
+
+    // Open submenu
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        showPanel(btn.dataset.menu);
+      });
+    });
+
+    // Back button
+    backBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        showPanel('main');
+      });
+    });
+
+    // Close on link click
+    //links.forEach(link => link.addEventListener('click', closeMenu)); I disabled this because when going to a new page, it was flickering.
+
+    btn.addEventListener('click', toggleMenu);
+    closebtn.addEventListener('click', closeMenu)
+  };
+
+  setupMenu();
+  document.addEventListener('astro:after-swap', setupMenu);
+</script>

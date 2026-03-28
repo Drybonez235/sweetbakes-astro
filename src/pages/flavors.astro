@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-
+import PageHero from "../components/PageHero.astro"
 import Page from "../layouts/index.astro";
 ---
 
@@ -8,12 +8,18 @@ import Page from "../layouts/index.astro";
   title="Cake & Frosting Flavors - Sweet Bakes Chicago Menu Guide."
   description="See our complete list of popular cake, filling, and frosting flavors to help you design your perfect custom cake or cupcake order."
 >
-
-<section class="w-full">
+<PageHero 
+  pageName="Cake Flavors"
+image="/cake-hero.avif"
+alt="A layered cake with rainbow layers and sprinles covering every sqaure inch of the outside"
+height={742}
+width={1022}
+></PageHero>
+<!-- <section class="w-full">
   <div class="w-full h-44 md:h-64 bg-gray-100">
     <img src="/cake-hero-cupcakes.avif" alt="Cakes hero" class="object-cover w-full h-full" />
   </div>
-</section>
+</section> -->
 
 <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
   <section class="prose lg:prose-lg">
