@@ -13,7 +13,7 @@ const galleryImages = [
   "/red-tiered-dragon-cake.avif",
   "/wedding-rose-tiered-cake.avif",
   "/chicago-city-wedding-cake.avif",
-  "/color-hued-tiered-cake.jpg"
+  "/color-hued-tiered-cake.avif"
 ];
 
 const products = [
@@ -49,9 +49,9 @@ alt="A four tiered wedding cake with white icing and cranberry and leaf accents.
 height={1280}
 width={1920}
 />
-<section class="grid grid-cols-1 lg:grid-cols-2 h-8/10 w-full overflow-hidden py-4">
+<section class="grid grid-cols-1 lg:grid-cols-2 h-auto w-full overflow-hidden py-12 items-center gap-8">
   
-  <div class="relative hidden md:block sm:h-full w-full group overflow-hidden bg-brand-dark-brown rounded-3xl mx-8">
+  <div class="relative hidden md:block mx-auto group overflow-hidden bg-brand-cream rounded-3xl max-w-xl ">
     <div id="carousel-track" class="flex h-full w-full transition-transform duration-700 ease-in-out">
       {galleryImages.map((src) => (
         <div class="min-w-full h-full">
