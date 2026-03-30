@@ -1,6 +1,6 @@
 <header class="bg-brand-light-cream shadow-sm relative z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="flex items-center justify-between py-4">
+    <nav class="flex items-center justify-between">
 
       <!-- Logo -->
       <a href="/" class="flex items-center">
@@ -60,56 +60,53 @@
 </header>
 
 <div id="mobile-menu"
-  class="fixed inset-0 bg-brand-cream z-40 hidden md:hidden flex flex-col justify-center text-2xl font-heading text-brand-dark-brown"
+  class="fixed inset-0 bg-brand-cream z-40 hidden flex flex-col font-heading text-brand-dark-brown"
 >
-
-  <!-- MAIN MENU -->
-  <div id="menu-main" class="menu-panel flex flex-col space-y-6 content-center items-center justify-center">
-    <a href="/" class="mobile-link">HOME</a>
-    <a href="/about-us" class="mobile-link">ABOUT</a>
-
-    <div class="space-y-6 content-center items-center justify-center">
-    <button class="menu-open block ml-11 " data-menu="products">PRODUCTS</button>
-    <button class="menu-open block ml-11" data-menu="events">EVENTS</button>
-    </div>
-
-    <a href="/gallery" class="mobile-link ml-8">GALLERY</a>
-    <a href="/contact" class="mobile-link ml-8">CONTACT</a>
-
-    <div class="absolute bottom-24 w-3/4 h-8 px-4 bg-brand-teal rounded-2xl">
-    <button id="close" class="w-full">Back</button>
+  <div class="flex flex-col h-full w-full pt-30 pb-8 px-8">
+    
+    <div id="menu-main" class="menu-panel flex-1 flex flex-col items-center justify-between">
+      <div class="flex flex-col space-y-4 items-center text-center">
+        <a href="/" class="mobile-link text-xl">Home</a>
+        <a href="/about-us" class="mobile-link text-xl">About</a>
+        <button class="menu-open text-xl" data-menu="products">Products</button>
+        <button class="menu-open text-xl" data-menu="events">Events</button>
+        <a href="/gallery" class="mobile-link text-xl">Gallery</a>
+        <a href="/contact" class="mobile-link text-xl">Contact</a>
       </div>
-  </div>
 
-  <!-- PRODUCTS -->
-  <div id="menu-products" class="menu-panel hidden flex flex-col space-y-6 justify-center items-center mt-16">
-
-    <a href="/flavors" class="mobile-link">Cake Flavors</a>
-    <a href="/pricing" class="mobile-link">Cake Pricing</a>
-    <a href="/traditional-cookies" class="mobile-link">Traditional Cookies</a>
-    <a href="/decorated-cookies" class="mobile-link">Decorated Cookies</a>
-    <a href="/macarons" class="mobile-link">Macarons</a>
-    <a href="/donuts" class="mobile-link">Donuts</a>
-    <a href="/pies" class="mobile-link">Pies</a>
-
-    <div class="absolute bottom-24   bg-brand-teal rounded-2xl w-3/4 h-8 px-4">
-    <button class="menu-back w-full">← Back</button>
+      <button id="close" class="w-full max-w-xs py-4 bg-brand-teal text-white rounded-2xl font-bold uppercase tracking-widest shadow-md">
+        Close Menu
+      </button>
     </div>
-  </div>
 
-  <!-- EVENTS -->
-  <div id="menu-events" class="menu-panel hidden flex flex-col  space-y-6 justify-center items-center">
-    <!-- <button class="menu-back">← Back</button> -->
+    <div id="menu-products" class="menu-panel hidden flex-1 flex flex-col items-center justify-between">
+      <div class="flex flex-col space-y-4 items-center text-center overflow-y-auto">
+        <a href="/flavors" class="mobile-link text-xl">Cake Flavors</a>
+        <a href="/pricing" class="mobile-link text-xl">Cake Pricing</a>
+        <a href="/traditional-cookies" class="mobile-link text-xl">Traditional Cookies</a>
+        <a href="/decorated-cookies" class="mobile-link text-xl">Decorated Cookies</a>
+        <a href="/macarons" class="mobile-link text-xl">Macarons</a>
+        <a href="/donuts" class="mobile-link text-xl">Donuts</a>
+        <a href="/pies" class="mobile-link text-xl">Pies</a>
+      </div>
 
-    <a href="/weddings" class="mobile-link">Weddings</a>
-    <a href="/parties" class="mobile-link">Parties</a>
-
-    <div class="absolute bottom-24  bg-brand-teal rounded-2xl w-3/4 h-8 px-4">
-    <button class="menu-back w-full">← Back</button>
+      <button class="menu-back w-full max-w-xs py-4 bg-brand-teal text-white rounded-2xl font-bold uppercase shadow-md">
+        ← Back
+      </button>
     </div>
+
+    <div id="menu-events" class="menu-panel hidden flex-1 flex flex-col items-center justify-between">
+      <div class="flex flex-col space-y-6 items-center text-center">
+        <a href="/weddings" class="mobile-link text-xl">Weddings</a>
+        <a href="/parties" class="mobile-link text-xl">Parties</a>
+      </div>
+
+      <button class="menu-back w-full max-w-xs py-4 bg-brand-teal text-white rounded-2xl font-bold uppercase shadow-md">
+        ← Back
+      </button>
+    </div>
+
   </div>
-
-
 </div>
 
 <script is:inline>

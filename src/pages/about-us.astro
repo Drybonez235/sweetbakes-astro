@@ -3,7 +3,6 @@ import "../styles/global.css";
 import CTA from "../components/CallToAction.astro";
 import Page from "../layouts/index.astro";
 
-// Using the same design pattern as your Donut data
 const aboutMetadata = {
   title: "Sweet Bakes Chicago - Our Story & Mission",
   description: "Learn about Sara Williams and our 100% nut-free cottage bakery serving the Chicago area."
@@ -11,39 +10,39 @@ const aboutMetadata = {
 ---
 
 <Page title={aboutMetadata.title} description={aboutMetadata.description}>
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
     
-    <section class="text-center space-y-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-[var(--color-brand-terracotta)]">
+    <section class="text-center space-y-6">
+      <h1 class="text-4xl md:text-6xl font-bold text-[var(--color-brand-terracotta)]">
         100% Nut-Free & Heart-Led
       </h1>
       <p class="text-2xl text-[var(--color-brand-brown)] max-w-2xl mx-auto italic">
         "Because everyone deserves a treat that is both safe and delicious."
       </p>
       
-      <div class="mt-8 p-6 bg-[var(--color-brand-cream)] border-2 border-[var(--color-brand-teal)] rounded-2xl max-w-3xl mx-auto">
-        <p class="text-2xl mt-2">
-          Sweet Bakes Chicago is a Tree Nut and Peanut FREE Facility. We are Located on the northwest side of Chicago and we ensure every ingredient is sourced from nut-free manufacturers. 
+      <div class="mt-8 p-8 bg-[var(--color-brand-light-cream)] border-2 border-[var(--color-brand-teal)] rounded-2xl max-w-3xl mx-auto shadow-sm">
+        <p class="text-xl md:text-2xl text-[var(--color-brand-dark-brown)]">
+          Sweet Bakes Chicago is a <strong>Tree Nut and Peanut FREE Facility</strong>. Located on the northwest side of Chicago, we ensure every ingredient is sourced from nut-free manufacturers. 
           We also offer select gluten, dairy, and sugar-free options.
         </p>
       </div>
     </section>
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="relative">
-        <img 
-          src="/sara.avif" 
-          alt="Sara Williams" 
-          class="rounded-2xl shadow-lg w-full aspect-[4/5] object-cover"
-        />
-        <div class="absolute -bottom-6 -right-6 hidden md:block w-48 h-48 border-8 border-[var(--color-brand-light-cream)] rounded-2xl overflow-hidden shadow-md">
-           <img src="/williams-family-roadtrip.avif" alt="The Williams Family" class="w-full h-full object-cover" />
+      <div class="flex justify-center">
+        <div class="relative">
+          <img 
+            src="/sara-300x300.avif" 
+            alt="Sara Williams" 
+            class="rounded-full shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-8 border-white"
+          />
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--color-brand-teal)] rounded-full -z-10 opacity-20"></div>
         </div>
       </div>
 
       <div class="space-y-6">
-        <h2 class="text-3xl font-semibold text-[var(--color-brand-brown)]">Meet Sara</h2>
-        <div class="space-y-4 text-2xl text-[var(--color-brand-dark-brown)] leading-relaxed">
+        <h2 class="text-4xl font-semibold text-[var(--color-brand-brown)]">Meet Sara</h2>
+        <div class="space-y-4 text-xl md:text-2xl text-[var(--color-brand-dark-brown)] leading-relaxed">
           <p>
             With over 20 years of experience and training from pastry icons like <strong>Collette Peters</strong>, 
             my journey with flour and sugar started as a high school hobby that blossomed into a lifelong obsession.
@@ -53,33 +52,45 @@ const aboutMetadata = {
             how difficult it was to find high-quality, safe treats. That’s when <strong>Sweet Bakes Chicago</strong> 
             became a dedicated nut-free bakery.
           </p>
-          <p>
-            Today, I balance life as a mother of two with the craft of creating custom cakes, cookies, 
-            and donuts that never compromise on safety or flavor.
-          </p>
         </div>
       </div>
     </section>
 
-    <section class="space-y-6">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <img src="/williams-children-red-bush.avif" alt="Family" class="rounded-xl h-64 w-full object-cover shadow-sm hover:scale-[1.02] transition-transform" />
-        <img src="/williams-family-at-park.avif" alt="Family Park" class="rounded-xl h-64 w-full object-cover shadow-sm hover:scale-[1.02] transition-transform" />
-        <img src="/Dlux-and-sara-beach.avif" alt="Sara and Dlux" class="rounded-xl h-64 w-full object-cover shadow-sm hover:scale-[1.02] transition-transform" />
+    <section class="space-y-8">
+      <div class="text-center">
+        <h3 class="text-3xl font-heading text-[var(--color-brand-brown)] mb-2">Baked with Family in Mind</h3>
+        <p class="text-lg text-[var(--color-brand-grey-green)]">My inspiration and my favorite taste-testers.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-2">
+          <img 
+            src="/sara-and-family.avif" 
+            alt="Sara and her family" 
+            class="rounded-2xl w-full aspect-[3/4] object-cover shadow-md hover:scale-[1.01] transition-transform" 
+          />
+        </div>
+        <div class="space-y-2">
+          <img 
+            src="/saras-children.avif" 
+            alt="Sara's children posing at the Lincoln Park Zoo" 
+            class="rounded-2xl w-full aspect-[3/4] object-cover shadow-md hover:scale-[1.01] transition-transform" 
+          />
+        </div>
       </div>
     </section>
 
-    <section class="bg-brand-brown rounded-3xl p-8 md:p-12 text-white">
-      <h3 class="text-3xl font-heading mb-4 text-white!">Let’s Make Something Sweet Together</h3>
-      <p class="max-w-xl mb-8 text-brand-light-cream text-xl">
+    <section class="bg-[var(--color-brand-brown)] rounded-3xl p-8 md:p-16 text-white text-center">
+      <h3 class="text-4xl font-heading mb-6">Let’s Make Something Sweet Together</h3>
+      <p class="max-w-xl mx-auto mb-10 text-[var(--color-brand-light-cream)] text-xl">
         From custom event treats to signature donuts, we’re ready to help you celebrate safely.
       </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
         <CTA message="Place an Order" url="/contact" variant="secondary" size="lg" />
-        <CTA message="View Our Work" url="/gallery" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-[var(--color-brand-brown)]" />
+        <CTA message="View Our Gallery" url="/gallery" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-[var(--color-brand-brown)]" />
       </div>
 
-      <footer class="mt-12 pt-8 border-t border-white/20 text-xl text-white italic">
+      <footer class="mt-16 pt-8 border-t border-white/20 text-lg text-white/80 italic">
         Note: Our products are produced in a home kitchen not inspected by a health department. 
         Facility may contain wheat, milk, soy, egg, and shellfish.
       </footer>
