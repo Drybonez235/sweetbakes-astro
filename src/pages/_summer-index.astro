@@ -1,0 +1,100 @@
+---
+import "../styles/global.css";
+
+import Page from "../layouts/index.astro";
+---
+
+<Page
+title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
+  description="Sweet Bakes Chicago is a nut-free cottage bakery in Chicago. Order custom cakes and allergy-friendly baked goods with confidence. Safe & delicious!"
+>
+  <main class="bg-[--color-brand-cream] text-[--color-brand-dark-brown] font-body antialiased">
+
+    <section class="relative bg-[--color-brand-brown] py-16 px-6 text-center text-[--color-brand-cream]">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-heading text-5xl md:text-7xl mb-4">Splash into Summer</h1>
+        <p class="text-xl md:text-2xl font-light italic">Hand-Crafted. Nut-Safe. Uniquely Yours.</p>
+      </div>
+    </section>
+
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 flex gap-4 justify-center">
+          <img 
+            src="/decorated-cookies-cics.avif" 
+            alt="Custom CICS Cookies" 
+            class="w-1/2 rounded-2xl shadow-lg transform -rotate-2 hover:rotate-0 transition duration-300"
+          />
+          <img 
+            src="/decorated-cookies-Indiana.avif" 
+            alt="Indiana University Cookies" 
+            class="w-1/2 rounded-2xl shadow-lg transform rotate-2 hover:rotate-0 transition duration-300"
+          />
+        </div>
+        <div class="order-1 md:order-2 space-y-6">
+          <h2 class="font-heading text-4xl text-[--color-brand-terracotta]">School's Out, Cookies are In!</h2>
+          <p class="text-lg leading-relaxed">
+            Make the final bell even sweeter with our custom decorated cookies. We specialize in 
+            <strong>school logos and custom names</strong> to celebrate your graduates in style.
+          </p>
+          <div class="bg-[--color-brand-light-cream] p-6 rounded-xl border-l-4 border-[--color-brand-teal] shadow-sm">
+            <h3 class="font-heading text-[--color-brand-brown] mb-2">The Sweet Bakes Safety Promise</h3>
+            <p>Our kitchen is strictly <strong>nut-safe and allergy-friendly</strong>, so every student can safely enjoy the celebration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-[--color-brand-grey-green] opacity-20 max-w-4xl mx-auto" />
+
+    <section class="py-16 px-6 bg-[--color-brand-light-cream]">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="font-heading text-4xl text-[--color-brand-brown]">Summer Birthdays Reimagined</h2>
+          <p class="text-lg">
+            We believe in <strong>sophisticated flavor on the inside</strong> and <strong>pure fun on the outside</strong>.
+          </p>
+          <ul class="space-y-3 list-disc list-inside text-[--color-brand-dark-brown]">
+            <li>Fresh fruit fillings (Strawberry, Lemon, Raspberry)</li>
+            <li>Custom themed decorations for kids</li>
+            <li>Light, airy textures perfect for warm Chicago days</li>
+          </ul>
+          <a href="/flavors" class="inline-block bg-[--color-brand-terracotta] text-white px-8 py-3 rounded-full font-bold hover:bg-[--color-brand-dark-brown] transition">Explore Flavors</a>
+        </div>
+        <div class="flex justify-center">
+          <img 
+            src="/cake-hero.avif" 
+            alt="Custom Birthday Cake" 
+            class="rounded-3xl shadow-2xl max-w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-6 max-w-7xl mx-auto text-center">
+      <h2 class="font-heading text-4xl mb-6 text-[--color-brand-brown]">High-Class Soirées</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-10">
+        Hosting a formal garden party or wedding? Elevate the menu with our classic French Macarons—now available <strong>without the nut allergy</strong>.
+      </p>
+      <img 
+        src="/macarons-1-650x433.avif" 
+        alt="Elegant Macaron Display" 
+        class="w-full max-w-4xl mx-auto rounded-xl shadow-md mb-8"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[--color-brand-dark-brown]">
+        <div class="p-4">
+          <h4 class="font-heading text-xl">Totally Nut-Free</h4>
+          <p>A rare, inclusive version of the French classic.</p>
+        </div>
+        <div class="p-4">
+          <h4 class="font-heading text-xl">Elegant Colors</h4>
+          <p>Matched to your summer event palette.</p>
+        </div>
+        <div class="p-4">
+          <h4 class="font-heading text-xl">Perfect Favors</h4>
+          <p>Beautifully boxed for weddings and showers.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Page>
