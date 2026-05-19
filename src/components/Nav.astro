@@ -17,7 +17,7 @@
       Products
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
     </button>
-    <ul class="absolute left-0 mt-2 w-48 bg-brand-light-cream border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-active:opacity-100 group-active:visible group-hover:visible transition-all duration-400">
+    <ul id="products-menu" class="absolute left-0 mt-2 w-48 bg-brand-light-cream border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400">
       <li><a href="/flavors" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Cake Flavors</a></li>
       <li><a href="/pricing" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Cake Pricing</a></li>
       <li><a href="/traditional-cookies" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Traditional Cookies</a></li>
@@ -33,7 +33,7 @@
       Events
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
     </button>
-    <ul class="absolute left-0 mt-2 w-48 bg-brand-light-cream border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-active:opacity-100 group-active:visible group-hover:visible transition-all duration-400 ">
+    <ul id="events-menu" class="absolute left-0 mt-2 w-48 bg-brand-light-cream border border-gray-100 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-active:opacity-100 group-active:visible group-hover:visible transition-all duration-400 ">
       <li><a href="/weddings" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Weddings</a></li>
       <li><a href="/parties" class="block px-4 py-2 hover:bg-brand-cream hover:text-brand-terracotta">Parties</a></li>
     </ul>
@@ -175,4 +175,83 @@
 
   setupMenu();
   document.addEventListener('astro:after-swap', setupMenu);
+</script>
+
+<script is:inline>
+  const setupDesktopMenus = () => {
+  // Grab the specific desktop button and menu elements by their IDs
+  const productsBtn = document.getElementById('products-btn');
+  const productsMenu = document.getElementById('products-menu');
+  const eventsBtn = document.getElementById('events-btn');
+  const eventsMenu = document.getElementById('events-menu');
+
+  // Direct CSS attribute manipulation functions
+  const openMenu = (menu, button) => {
+    menu.style.opacity = '1';
+    menu.style.visibility = 'visible';
+    menu.style.transform = 'translateY(0px)';
+    
+    // Rotate the chevron icon inside the clicked button if it exists
+    const chevron = button?.querySelector('svg');
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
+  };
+
+  const closeMenu = (menu, button) => {
+    menu.style.opacity = '0';
+    menu.style.visibility = 'hidden';
+    menu.style.transform = 'translateY(4px)'; // Matches Tailwind's translate-y-1
+    
+    const chevron = button?.querySelector('svg');
+    if (chevron) chevron.style.transform = 'rotate(0deg)';
+  };
+
+  // Click handler for Products Dropdown
+  if (productsBtn && productsMenu) {
+    productsBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Stops the document click handler from instantly closing it
+      
+      if (productsMenu.style.visibility === 'visible') {
+        closeMenu(productsMenu, productsBtn);
+      } else {
+        openMenu(productsMenu, productsBtn);
+        if (eventsMenu) closeMenu(eventsMenu, eventsBtn); // Ensure the other menu shuts
+      }
+    });
+  }
+
+  // Click handler for Events Dropdown
+  if (eventsBtn && eventsMenu) {
+    eventsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      if (eventsMenu.style.visibility === 'visible') {
+        closeMenu(eventsMenu, eventsBtn);
+      } else {
+        openMenu(eventsMenu, eventsBtn);
+        if (productsMenu) closeMenu(productsMenu, productsBtn); // Ensure the other menu shuts
+      }
+    });
+  }
+
+  // Global document click: closes menus when tapping outside on mobile/iPad layouts
+  document.addEventListener('click', (e) => {
+    if (productsMenu && !productsBtn.contains(e.target) && !productsMenu.contains(e.target)) {
+      closeMenu(productsMenu, productsBtn);
+    }
+    if (eventsMenu && !eventsBtn.contains(e.target) && !eventsMenu.contains(e.target)) {
+      closeMenu(eventsMenu, eventsBtn);
+    }
+  });
+
+  // Keyboard accessibility: Collapse menus on 'Escape' key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (productsMenu) closeMenu(productsMenu, productsBtn);
+      if (eventsMenu) closeMenu(eventsMenu, eventsBtn);
+    }
+  });
+};
+
+// Standard page load execution
+setupDesktopMenus();
 </script>
