@@ -1,6 +1,7 @@
 ---
 // src/pages/fall-festivities.astro
 import BaseLayout from "../layouts/index.astro";
+import TeamExtraLifeAstroComponent from "../components/Team-Extra-Life.astro";
 import "../styles/global.css";
 ---
 
@@ -13,11 +14,11 @@ import "../styles/global.css";
         <h1 class="text-4xl/tight sm:text-5xl/tight font-bold text-[var(--color-brand-brown)]">
          Sweet Bakes Chicago
         </h1>
-        <p class="text-lg/7 text-[var(--color-brand-dark-brown)] max-w-2xl mx-auto">
+        <p class="text-lg/7 text-[var(--color-brand-dark-brown)] max-w-2xl mx-auto  backdrop-blur-sm">
           Celebrate the crisp autumn air and game day excitement with sweet, safe treats handcrafted right here in Chicago!
         </p>
       </section>
-
+<TeamExtraLifeAstroComponent></TeamExtraLifeAstroComponent>
 <!-- Nut Free Cupcakes Section -->
 <section class="space-y-8">
   <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-center">

@@ -1,0 +1,64 @@
+---
+// src/components/ExtraLifeSection.astro
+---
+
+<section class="space-y-8 ">
+  <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-center">
+    
+    <!-- Left Column: Text & Instructions (Fixed 50% width on md screens and up) -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6 py-4">
+      
+      <!-- Text & Description Block -->
+      <div class="space-y-4">
+
+        <h2 class="text-3xl/tight sm:text-4xl/tight font-bold text-[var(--color-brand-brown)]">
+          Team Extra Life Chocolate Chip Cookies: $4 each!
+        </h2>
+        
+        <div class="space-y-3 text-base/7 text-[var(--color-brand-dark-brown)] backdrop-blur-sm">
+          <p>
+            We’re making <strong class="font-bold text-[var(--color-brand-brown)]">Giant Chocolate Chip Cookies</strong> to support a great cause! For the month of September, we’re offering our giant chocolate chip cookies <storng class="font-bold text-[var(--color-brand-brown)]">individually</storng> with <strong class="font-bold text-[var(--color-brand-brown)]">$1 from every cookie sold donated to Team Extra Life</strong> for the WALK to End Hydrocephalus.
+          </p>
+
+          <div class="bg-[var(--color-brand-light-cream)] border border-[var(--color-brand-brown)]/10 rounded-lg p-4 space-y-2">
+            <p class="text-sm font-bold text-[var(--color-brand-brown)]">
+              How to participate:
+            </p>
+            <ul class="text-sm/6 text-[var(--color-brand-dark-brown)] list-disc list-inside space-y-1">
+              <li>
+                Select <strong class="font-bold">Team Extra Life Giant Chocolate Chip Cookie</strong> at checkout.
+              </li>
+             
+             
+            </ul>
+            <p class="text-brand-grey-green">You can order a single cookie, or as many as you want!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button Block -->
+      <div id="extralife-CTA" class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+        <a 
+          id="extralife-CTA-contact"
+          href="/contact/" 
+          class="inline-flex items-center justify-center bg-[var(--color-brand-teal)] hover:bg-[var(--color-brand-grey-green)] text-shadow-cyan-400 font-bold py-4 px-8 rounded-full shadow-xs transition-colors text-center text-base/none"
+        >
+          Support Team Extra Life!
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Single Showcase Image (Fixed 50% width on md screens and up) -->
+    <div class="w-full md:w-1/2 flex flex-col">
+      <div class="w-full h-full  rounded-sm">
+        <img 
+          src="/Team-Extra-Life-Logo.avif" 
+          alt="Team Extra Life Logo" 
+          class="w-full h-full object-cover block"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
