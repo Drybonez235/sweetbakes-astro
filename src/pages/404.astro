@@ -1,0 +1,40 @@
+---
+import Page from "../layouts/index.astro";
+import "../styles/global.css";
+---
+
+<Page title="Page Not Found | Sweet Bakes Chicago">
+  <main class="min-h-dvh flex items-center justify-center px-4 py-12">
+    <div class="max-w-xl w-full text-center flex flex-col items-center gap-6">
+      <!-- 404 Visual Feature -->
+      <div class="relative w-full max-w-sm rounded-2xl">
+        <img
+          src="/sweet-bakes-chicago-no-cookies.avif"
+          alt="Out of cookies at Sweet Bakes Chicago"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Text Header -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-grey-green)">
+          Error 404
+        </span>
+        <h1 class="text-3xl/9 sm:text-4xl/10 font-bold text-(--color-brand-brown)">
+          Oh Crummy Buttons! Page Not Found
+        </h1>
+        <p class="text-base/6 text-(--color-brand-dark-brown)/80 max-w-md mx-auto">
+          Looks like the treat you’re looking for has already been snatched up. Let’s get you back to the fresh bakes!
+        </p>
+      </div>
+
+      <!-- Action Button -->
+      <a
+        href="/"
+        class="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-sm bg-(--color-brand-terracotta) hover:bg-(--color-brand-dark-brown) text-white font-semibold transition-colors"
+      >
+        Return Home
+      </a>
+    </div>
+  </main>
+</Page>
