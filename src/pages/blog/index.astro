@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import Footer from '../../components/Footer.astro'
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+import '../../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog | Sweet Bakes Chicago</title>
+    <meta name="description" content="Read the latest news, recipes, and updates from Sweet Bakes Chicago." />
+  </head>
+  <body class="bg-brand-cream text-brand-dark-brown min-h-dvh">
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <!-- Back to website button in upper left-hand corner -->
+      <div class="mb-6 md:mb-0 md:absolute md:top-12 md:left-4">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 text-sm/4 font-semibold text-brand-brown hover:text-brand-terracotta transition-colors group"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 20 20" 
+            fill="currentColor" 
+            class="size-4 transition-transform group-hover:-translate-x-1"
+          >
+            <path fill-rule="evenodd" d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10z" clip-rule="evenodd" />
+          </svg>
+          Back to website
+        </a>
+      </div>
+      <header class="flex flex-col items-center text-center mb-12">
+        <a href="/" class="inline-block mb-4 hover:opacity-90 transition-opacity">
+          <img 
+            src='/sweet-bakes-logo-nobg.avif' 
+            alt="Sweet Bakes Chicago Logo" 
+            class="size-32 md:size-40 object-contain mx-auto"
+            loading="eager"
+          />
+        </a>
+        <h1 class="text-4xl/tight md:text-5xl/tight font-bold text-brand-brown mb-4">Sweet Bakes Blog</h1>
+        <p class="text-lg/7 text-brand-grey-green">Stories, recipes, and sweet updates from our Chicago bakery.</p>
+      </header>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        {posts.map((post) => (
+          <article class="bg-brand-light-cream p-6 rounded-lg border border-brand-brown/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 text-xs/4 text-brand-grey-green mb-2">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <span>•</span>
+                <span>{post.data.author}</span>
+              </div>
+              <h2 class="text-2xl/8 font-bold text-brand-brown mb-3">
+                <a href={`/blog/${post.slug}/`} class="hover:text-brand-terracotta transition-colors">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="text-base/6 mb-4">{post.data.description}</p>
+            </div>
+
+            <div>
+              {post.data.tags && (
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-brown/10">
+                  {post.data.tags.map((tag) => (
+                    <a
+                      href={`/blog/tags/${tag}/`}
+                      class="text-xs/4 font-semibold px-2.5 py-1 bg-brand-teal/20 text-brand-terracotta rounded-xs hover:bg-brand-teal/40 transition-colors"
+                    >
+                      #{tag}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+     
+    </main> 
+    <Footer></Footer>
+  </body>
+</html>

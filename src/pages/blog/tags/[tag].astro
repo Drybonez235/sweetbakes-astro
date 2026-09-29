@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+ import "../../../styles/global.css"
+
+ export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))];
+
+  return allTags.map((tag) => {
+    const filteredPosts = posts.filter((post) => post.data.tags?.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+ 
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Posts tagged with #{tag} | Sweet Bakes Chicago</title>
+  </head>
+  <body class="bg-brand-cream text-brand-dark-brown min-h-dvh">
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <nav class="mb-8">
+        <a href="/blog/" class="text-sm/6 font-semibold text-brand-terracotta hover:underline">
+          &larr; Back to all posts
+        </a>
+      </nav>
+
+      <header class="mb-12">
+        <h1 class="text-3xl/tight font-bold text-brand-brown">
+          Posts tagged with <span class="text-brand-terracotta">#{tag}</span>
+        </h1>
+      </header>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        {posts.map((post) => (
+          <article class="bg-brand-light-cream p-6 rounded-lg border border-brand-brown/10 flex flex-col justify-between">
+            <div>
+              <div class="text-xs/4 text-brand-grey-green mb-2">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </div>
+              <h2 class="text-xl/7 font-bold text-brand-brown mb-2">
+                <a href={`/blog/${post.slug}/`} class="hover:text-brand-terracotta transition-colors">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="text-sm/6 mb-4">{post.data.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </main>
+  </body>
+</html>
