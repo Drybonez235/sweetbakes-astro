@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import '../../styles/global.css'
-import Footer from '../../components/Footer.astro'
+import BaseLayout from '../../layouts/index.astro';
+import '../../styles/global.css';
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
@@ -14,84 +15,82 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{post.data.title} | Sweet Bakes Chicago</title>
-    <meta name="description" content={post.data.description} />
-  </head>
-  <body class="bg-brand-cream text-brand-dark-brown min-h-dvh">
-    <article class="max-w-3xl mx-auto px-4 py-12">
-      <nav class="mb-8">
-        <a href="/blog/" class="text-sm/6 font-semibold text-brand-terracotta hover:underline">
-          &larr; Back to all posts
-        </a>
-      </nav>
+<BaseLayout title={`${post.data.title} | Sweet Bakes Chicago`} description={post.data.description}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="mb-8">
+      <a 
+        href="/blog/" 
+        class="inline-flex items-center gap-1.5 text-sm/6 font-semibold text-[var(--color-brand-terracotta)] hover:text-[var(--color-brand-dark-brown)] transition-colors group"
+      >
+        <span class="transition-transform group-hover:-translate-x-1">&larr;</span> Back to all posts
+      </a>
+    </nav>
 
-      <header class="mb-10 border-b border-brand-brown/10 pb-8">
-        <!-- Post Title (Main H1) -->
-        <h1 class="text-4xl/tight md:text-5xl/tight font-bold text-brand-brown mb-6 font-heading">
-          {post.data.title}
-        </h1>
-        <div class="flex items-center gap-3 text-base/6 text-brand-grey-green">
-          <time datetime={post.data.pubDate.toISOString()}>
-            {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
-          <span>•</span>
-          <span>By {post.data.author}</span>
+    <header class="mb-10 border-b border-[var(--color-brand-brown)]/10 pb-8">
+      <!-- Post Title (Main H1) -->
+      <h1 class="text-4xl/tight md:text-5xl/tight font-bold text-[var(--color-brand-brown)] mb-6 font-heading">
+        {post.data.title}
+      </h1>
+
+      <div class="flex items-center gap-3 text-base/6 text-[var(--color-brand-grey-green)]">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <span>•</span>
+        <span>By {post.data.author}</span>
+      </div>
+
+      {post.data.tags && (
+        <div class="flex flex-wrap gap-2 mt-4">
+          {post.data.tags.map((tag) => (
+            <a
+              href={`/blog/tags/${tag}/`}
+              class="text-xs/4 font-semibold px-2.5 py-1 bg-[var(--color-brand-teal)]/20 text-[var(--color-brand-terracotta)] rounded-xs hover:bg-[var(--color-brand-teal)]/40 transition-colors"
+            >
+              #{tag}
+            </a>
+          ))}
         </div>
-        {post.data.tags && (
-          <div class="flex flex-wrap gap-2 mt-4">
-            {post.data.tags.map((tag) => (
-              <a
-                href={`/blog/tags/${tag}/`}
-                class="text-xs/4 font-semibold px-2.5 py-1 bg-brand-teal/20 text-brand-terracotta rounded-xs hover:bg-brand-teal/40 transition-colors"
-              >
-                #{tag}
-              </a>
-            ))}
-          </div>
-        )}
-      </header>
+      )}
+    </header>
 
-     <!-- Markdown Content Wrapper with Ordered List, Unordered List, & Heading Styles -->
-<div class="prose max-w-none text-base/7 space-y-6 [&_h2]:text-2xl/9 [&_h2]:md:text-3xl/10 [&_h2]:font-bold [&_h2]:text-brand-brown [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl/8 [&_h3]:md:text-2xl/9 [&_h3]:font-bold [&_h3]:text-brand-brown [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_li]:pl-1">
-  <Content />
-</div>
-<!-- Author Bio Block -->
-<section class="bg-brand-light-cream border border-brand-brown/10 rounded-2xl p-6 md:p-8 my-12 shadow-xs">
-  <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
-    <img 
-      src="/sara-300x300.avif" 
-      alt="Sara Williams - Sweet Bakes Chicago" 
-      class="size-28 sm:size-32 rounded-full object-cover border-4 border-brand-teal shadow-xs shrink-0" 
-    />
-    <div class="space-y-3">
-      <div>
-        <span class="text-xs/4 font-bold uppercase tracking-wider text-brand-grey-green font-body">Written By</span>
-        <h3 class="text-2xl/8 font-bold text-brand-brown font-heading mt-0.5">Sara Williams</h3>
-      </div>
-      <p class="text-base/6 text-brand-dark-brown font-body">
-        Sara is the founder, head baker, and creative force behind <strong>Sweet Bakes Chicago</strong>. With over 20 years of pastry experience, she transformed her bakery into a dedicated 100% nut-free kitchen after her daughter’s allergy diagnosis in 2015. Today, she crafts safe, handcrafted treats—from sunflower seed macarons to custom event cakes and yeast donuts—for celebrations across Chicago.
-      </p>
-      <div class="pt-2 flex flex-wrap gap-4 justify-center sm:justify-start items-center text-sm/6 font-semibold">
-        <a 
-          href="https://www.sweetbakeschicago.com/about-us/" 
-          class="text-brand-terracotta hover:text-brand-dark-brown underline transition-colors"
-        >
-          Read Our Full Story &rarr;
-        </a>
-        <a 
-          href="mailto:sweetbakeschicago@gmail.com?subject=Outside%20Vender%20Request" 
-          class="text-brand-grey-green hover:text-brand-brown underline transition-colors"
-        >
-          Email Sara Directly
-        </a>
-      </div>
+    <!-- Markdown Content Wrapper -->
+    <div class="prose max-w-none text-base/7 space-y-6 [&_h2]:text-2xl/9 [&_h2]:md:text-3xl/10 [&_h2]:font-bold [&_h2]:text-[var(--color-brand-brown)] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl/8 [&_h3]:md:text-2xl/9 [&_h3]:font-bold [&_h3]:text-[var(--color-brand-brown)] [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_li]:pl-1">
+      <Content />
     </div>
-  </div>
-</section>
-    </article>
-    <Footer></Footer>
-  </body>
-</html>
+
+    <!-- Author Bio Block -->
+    <section class="bg-[var(--color-brand-light-cream)] border border-[var(--color-brand-brown)]/10 rounded-2xl p-6 md:p-8 my-12 shadow-xs">
+      <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+        <img 
+          src="/sara-300x300.avif" 
+          alt="Sara Williams - Sweet Bakes Chicago" 
+          class="size-28 sm:size-32 rounded-full object-cover border-4 border-[var(--color-brand-teal)] shadow-xs shrink-0" 
+        />
+        <div class="space-y-3">
+          <div>
+            <span class="text-xs/4 font-bold uppercase tracking-wider text-[var(--color-brand-grey-green)] font-body">Written By</span>
+            <h3 class="text-2xl/8 font-bold text-[var(--color-brand-brown)] font-heading mt-0.5">Sara Williams</h3>
+          </div>
+          <p class="text-base/6 text-[var(--color-brand-dark-brown)] font-body">
+            Sara is the founder, head baker, and creative force behind <strong>Sweet Bakes Chicago</strong>. With over 20 years of pastry experience, she transformed her bakery into a dedicated 100% nut-free kitchen after her daughter’s allergy diagnosis in 2015. Today, she crafts safe, handcrafted treats—from sunflower seed macarons to custom event cakes and yeast donuts—for celebrations across Chicago.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 justify-center sm:justify-start items-center text-sm/6 font-semibold">
+            <a 
+              href="/about-us/" 
+              class="text-[var(--color-brand-terracotta)] hover:text-[var(--color-brand-dark-brown)] underline transition-colors"
+            >
+              Read Our Full Story &rarr;
+            </a>
+            <a 
+              href="mailto:sweetbakeschicago@gmail.com?subject=Outside%20Vender%20Request" 
+              class="text-[var(--color-brand-grey-green)] hover:text-[var(--color-brand-brown)] underline transition-colors"
+            >
+              Email Sara Directly
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
