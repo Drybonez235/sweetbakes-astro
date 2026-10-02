@@ -1,203 +1,137 @@
 ---
-// src/pages/fall-festivities.astro
-import BaseLayout from "../layouts/index.astro";
-import { BAKERY_MENU } from '../data/menu';
-import TeamExtraLifeAstroComponent from "../components/Team-Extra-Life.astro";
 import "../styles/global.css";
+import Page from "../layouts/index.astro";
+import { BAKERY_MENU } from "../data/menu";
 ---
 
-<BaseLayout title="Fall Festivities | Sweet Bakes Chicago">
-  <main class=" py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto space-y-16">
-      
-      <!-- Hero / Headline Section -->
-      <section class="text-center space-y-4">
-        <h1 class="text-4xl/tight sm:text-5xl/tight font-bold text-[var(--color-brand-brown)]">
-         Sweet Bakes Chicago
-        </h1>
-        <p class="text-lg/7 text-[var(--color-brand-dark-brown)] max-w-2xl mx-auto  backdrop-blur-sm">
-          Celebrate the crisp autumn air and game day excitement with sweet, safe treats handcrafted right here in Chicago!
-        </p>
-      </section>
-<TeamExtraLifeAstroComponent></TeamExtraLifeAstroComponent>
-<!-- Nut Free Cupcakes Section -->
-<section class="space-y-8">
-  <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-center">
-    
-    <!-- Left Column: Fixed 50% width on md screens and up -->
-    <div class="w-full md:w-1/2 flex flex-col">
-      <!-- Top Large Showcase Image -->
-      <div class="w-full aspect-4/3 rounded-t-sm overflow-hidden">
-        <img 
-          src="/pumkin-spice-cupcake.avif" 
-          alt="Nut free pumpkin spice cupcakes with cream cheese frosting" 
-          class="w-full h-full object-cover block"
-        />
-      </div>
+<Page
+  title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
+  description="Sweet Bakes Chicago is a nut-free cottage bakery in Chicago. Order custom cakes and allergy-friendly baked goods with confidence. Safe & delicious!"
+>
 
-      <!-- Bottom 3-Image Row -->
-      <div class="hidden md:flex w-full">
-        <div class="flex-1 aspect-square min-w-0 rounded-t-none rounded-b-sm overflow-hidden">
-          <img 
-            src="/jack-o-lantern-cupcakes.avif" 
-            alt="Jack-o-lantern nut free cupcakes" 
-            class="w-full h-full object-cover block"
-          />
-        </div>
-        
-        <div class="flex-1 aspect-square min-w-0 overflow-hidden">
-          <img 
-            src="/cup-cake-lemon-zest.avif" 
-            alt="Fresh lemon zest nut free cupcakes" 
-            class="w-full h-full object-cover block"
-          />
-        </div>
-
-        <div class="flex-1 aspect-square min-w-0 rounded-b-sm overflow-hidden">
-          <img 
-            src="/cup-cake-minis-halloween.avif" 
-            alt="Festive Halloween mini nut free cupcakes" 
-            class="w-full h-full object-cover block"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Column: Fixed 50% width on md screens and up -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6 py-4">
-      
-      <!-- Text & Description Block -->
-      <div class="space-y-4">
-        <h2 class="text-3xl/tight sm:text-4xl/tight font-bold text-[var(--color-brand-brown)]">
-          Nut Free Cupcakes
-        </h2>
-        
-        <div class="space-y-3 text-base/7 text-[var(--color-brand-dark-brown)]">
-          <p>
-            Order our rich <strong class="font-bold text-[var(--color-brand-brown)]">Pumpkin Spice</strong> cupcakes—crafted with warm autumn spices and layered with velvety cream cheese frosting—or try savory-sweet <strong class="font-bold text-[var(--color-brand-brown)]">Maple Bacon</strong>, baked with maple syrup flavor and topped with crispy bacon bits.
-          </p>
-          <p class="text-sm/6 text-[var(--color-brand-grey-green)] font-medium">
-            Baked in our 100% nut-free facility for safe, delicious fall celebrations.
-          </p>
-        </div>
-      </div>
-
-      <!-- Action Buttons Block -->
-      <div id="cupcakes-CTA" class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-        <a 
-        id="cupcakes-CTA-contact"
-          href="/contact/" 
-          class="inline-flex items-center justify-center bg-[var(--color-brand-teal)] hover:bg-[var(--color-brand-grey-green)] text-shadow-cyan-400 font-bold py-4 px-8 rounded-full shadow-xs transition-colors text-center text-base/none"
-        >
-          Order Your Cupcakes
-        </a>
-
-        <a
-          id="cupcakes-CTA-flavors"
-          href="/flavors/" 
-          class="inline-flex items-center gap-2 font-bold text-[var(--color-brand-brown)] hover:text-[var(--color-brand-terracotta)] transition-colors text-base/6 transition duration-300 ease-in-out hover:scale-105"
-        >
-          Explore flavors <span aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
-
-    </div>
-
+<section class="w-full">
+  <div class="w-full h-64 md:h-96 bg-gray-100">
+    <img src="/halloween-hero.avif" alt="Hero - Sweet Bakes Chicago" class="object-cover w-full h-full" />
   </div>
 </section>
-      <!-- Nut Free Cookies Section -->
-      <section class="space-y-8">
-        <div class="border-b border-[var(--color-brand-brown)]/20 pb-4">
-          <h2 class="text-3xl/tight sm:text-4xl/tight font-bold text-[var(--color-brand-brown)]">
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <section class="text-center space-y-4">
+    <h1 class="text-4xl md:text-5xl font-bold text-[var(--color-brand-brown)]">Sweet Bakes Chicago</h1>
+    <h2 class="text-2xl md:text-3xl font-semibold">Order your nut free treats today!</h2>
+    
+    <p class="text-lg/7 text-[var(--color-brand-dark-brown)] max-w-2xl mx-auto">
+      Celebrate the crisp autumn air with sweet, safe treats handcrafted right here in Chicago! All of our treats are baked in our 100% nut-free facility for safe, delicious fall celebrations.
+    </p>
+
+
+  <section class="mt-12 text-2xl">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- CUPCAKES -->
+      <a id="cta-halloween-cupcakes" href="pricing#cupcakes" class="block h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg flex flex-col transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300">
+        <div class="h-40 bg-gray-100">
+          <img 
+            src="/jack-o-lantern-cupcakes.avif" 
+            alt="Pumpkin Cupcakes" 
+            class="object-cover w-full h-full" 
+          />
+        </div>
+        <div class="p-4 mt-auto">
+          <h4 class="text-2xl font-bold mb-1" style="font-family: 'Creepster', cursive; color:#F97316;">
+            Nut Free Cupcakes
+          </h4>
+          <p class="font-extrabold mt-2 text-lg text-purple-700">Starting @ ${BAKERY_MENU['cupcakes'].price} a {BAKERY_MENU['cupcakes'].unit}</p>
+        </div>
+      </a>
+
+      <!-- COOKIES -->
+      <a id="cta-halloween-cookies" href="decorated-cookies" class="block h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg flex flex-col transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300">
+        <div class="h-40 bg-gray-100">
+          <img 
+            src="/gingerbread-skeletons.avif" 
+            alt="Skeleton Cookie" 
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <div class="p-4 mt-auto">
+          <h4 class="text-2xl font-bold mb-1" style="font-family: 'Creepster', cursive; color:#F97316;">
             Nut Free Cookies
-          </h2>
+          </h4>
+          <p class="font-extrabold mt-2 text-lg text-purple-700">Starting @ ${BAKERY_MENU['cookies-traditional'].price} a {BAKERY_MENU['cookies-traditional'].unit}</p>
         </div>
+      </a>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Bears Logo Custom Cookies -->
-          <div class="bg-[var(--color-brand-light-cream)] rounded-xl overflow-hidden border border-[var(--color-brand-brown)]/10 shadow-sm flex flex-col">
-            <div class="aspect-4/3 overflow-hidden bg-[var(--color-brand-cream)]">
-              <img 
-                src="/sweet-bakes-chicago-custom-cookies-bears-logo.jpg" 
-                alt="Custom decorated cookies featuring the Chicago Bears football team logo" 
-                class="size-full object-cover"
-              />
-            </div>
-            <div class="p-6 flex flex-col justify-between grow space-y-4">
-              <div>
-                <h3 class="text-xl/7 font-bold text-[var(--color-brand-brown)]">
-                  Football & Game Day Favorites
-                </h3>
-                <p class="text-base/6 text-[var(--color-brand-dark-brown)] mt-2">
-                  Cheer on the your home team with our custom decorated sugar cookies! Intricately iced and perfect for game day watch parties.
-                </p>
-              </div>
-              <a 
-                id="cookies-CTA-decorated"
-              href="/decorated-cookies/" 
-                class="inline-flex items-center justify-center bg-[var(--color-brand-teal)] hover:bg-[var(--color-brand-grey-green)] text-shadow-cyan-400 font-bold py-4 px-8 rounded-full shadow-xs transition-colors text-center text-base/none"
-              >
-                Order Decorated Cookies
-              </a>
-            </div>
-          </div>
-
-          <!-- Game Day & Football Hearts Cookies -->
-          <div class="bg-[var(--color-brand-light-cream)] rounded-xl overflow-hidden border border-[var(--color-brand-brown)]/10 shadow-sm flex flex-col">
-            <div class="aspect-4/3 overflow-hidden bg-[var(--color-brand-cream)]">
-              <img 
-                src="/cookies-hero.avif" 
-                alt="A chocolate chip cookie broken in two showing moist chocolate." 
-                class="size-full object-cover"
-              />
-            </div>
-            <div class="p-6 flex flex-col justify-between grow space-y-4">
-              <div>
-                <h3 class="text-xl/7 font-bold text-[var(--color-brand-brown)]">
-                  Cozy Classics
-                </h3>
-                <p class="text-base/6 text-[var(--color-brand-dark-brown)] mt-2">
-                  Enjoy fresh baked cookies with a cup of steaming apple cider or your fall beverage of choice. Perfectly baked for a crisp fall day.
-                </p>
-              </div>
-              <a 
-                id="cookies-CTA-cookies"
-              href="/decorated-cookies/" 
-                class="inline-flex items-center justify-center bg-[var(--color-brand-teal)] hover:bg-[var(--color-brand-grey-green)] text-shadow-cyan-400 font-bold py-4 px-8 rounded-full shadow-xs transition-colors text-center text-base/none"
-              >
-                Order Your Cookies
-              </a>
-            </div>
-          </div>
+      <!-- DONUTS -->
+      <a id="cta-halloween-donuts" href="donuts" class="block h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg flex flex-col transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300">
+        <div class="h-40 bg-gray-100">
+          <img 
+            src="/halloween-donuts.avif" 
+            alt="Halloween Donuts" 
+            class="object-cover w-full h-full"
+          />
         </div>
-      </section>
-
-      <!-- Bottom Call to Action -->
-      <section class="bg-[var(--color-brand-teal)]/20 rounded-2xl p-8 text-center space-y-4 border border-[var(--color-brand-teal)]/40">
-        <h3 class="text-2xl/8 font-bold text-[var(--color-brand-brown)]">
-          Planning a Fall Event or Tailgate?
-        </h3>
-        <p class="text-base/6 text-[var(--color-brand-dark-brown)] max-w-xl mx-auto">
-          From custom football cookies to pumpkin spice cupcakes, we can help make your autumn gatherings extra sweet.
-        </p>
-        <div class="pt-2 flex flex-wrap justify-center gap-4">
-          <a 
-            id="footer-CTA-gallery"
-          href="/gallery/" 
-            class="font-bold bg-[var(--color-brand-terracotta)] hover:bg-[var(--color-brand-dark-brown)] text-white py-3 px-6 rounded-md transition-colors"
-          >
-            View Gallery
-          </a>
-          <a 
-            id="footer-CTA-pricing"
-          href="/pricing/" 
-            class="font-bold bg-[var(--color-brand-light-cream)] hover:bg-white text-[var(--color-brand-brown)] border border-[var(--color-brand-brown)]/30 py-3 px-6 rounded-md transition-colors"
-          >
-            View Pricing
-          </a>
+        <div class="p-4 mt-auto">
+          <h4 class="text-2xl font-bold mb-1" style="font-family: 'Creepster', cursive; color:#F97316;">
+            Nut Free Donuts
+          </h4>
+          <p class="font-extrabold mt-2 text-lg text-purple-700">Starting @ ${BAKERY_MENU['donuts'].price} a {BAKERY_MENU['donuts'].unit}</p>
         </div>
-      </section>
+      </a>
+
+      <!-- PIES -->
+      <a id="cta-halloween-pies" href="pies" class="block h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg flex flex-col transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300">
+        <div class="h-40 bg-gray-100">
+          <img 
+            src="/pretzel-pie.avif" 
+            alt="Pretzel Pie" 
+            class="object-cover w-full h-full" 
+          />
+        </div>
+        <div class="p-4 mt-auto">
+          <h4 class="text-2xl font-bold mb-1" style="font-family: 'Creepster', cursive; color:#F97316;">
+            Nut Free Pies
+          </h4>
+          <p class="font-extrabold mt-2 text-lg text-purple-700">Starting @ ${BAKERY_MENU['pie'].price} a {BAKERY_MENU['pie'].unit}</p>
+        </div>
+      </a>
+
+      <!-- CAKE -->
+      <a id="cta-halloween-cake" href="flavors" class="block h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg flex flex-col transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300">
+        <div class="h-40 bg-gray-100">
+          <img 
+            src="/carmal-cake.avif" 
+            alt="White caramel cake" 
+            class="object-cover w-full h-full" 
+          />
+        </div>
+        <div class="p-4 mt-auto">
+          <h4 class="text-2xl font-bold mb-1" style="font-family: 'Creepster', cursive; color:#F97316;">
+            Nut Free Cake
+          </h4>
+          <p class="font-extrabold mt-2 text-lg text-purple-700">Starting at ${BAKERY_MENU['cake-six-inch'].price}</p>
+        </div>
+      </a>
+
+      <!-- MACARONS -->
+      <a id="cta-halloween-macarons" href="macarons" class="block h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg flex flex-col transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl hover:border-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300">
+        <div class="h-40 bg-gray-100">
+          <img 
+            src="/halloween-macaroons.avif" 
+            alt="Halloween Macarons" 
+            class="object-cover w-full h-full" 
+          />
+        </div>
+        <div class="p-4 mt-auto">
+          <h4 class="text-2xl font-bold mb-1" style="font-family: 'Creepster', cursive; color:#F97316;">
+            Nut Free Macarons
+          </h4>
+          <p class="font-extrabold mt-2 text-lg text-purple-700">Starting @ ${BAKERY_MENU['macarons'].price} a {BAKERY_MENU['macarons'].unit}</p>
+        </div>
+      </a>
 
     </div>
-  </main>
-</BaseLayout>
+  </section>
+</main>
+
+</Page>
