@@ -14,6 +14,10 @@
   --color-brand-grey-green: #5D9688;
   --color-brand-dark-brown: #2E241F;
 
+  /* Christmas / seasonal colors */
+  --color-xmas-red: #C8102E;
+  --color-xmas-green: #14532D;
+
   /* Font Families */
   --font-heading: 'Merriweather', serif;
   --font-body: 'Nunito Sans', sans-serif;

@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Page from "../layouts/index.astro";
+import { BAKERY_MENU } from "../data/menu";
 ---
 <Page
 title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
@@ -12,11 +13,11 @@ title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
 
 <!-- HERO -->
 <section class="relative w-full h-[75vh] overflow-hidden">
-  <img src="christmas_images/christmas-cookie-hero-banner.png" 
-       alt="Decorated Christmas cookies" 
+  <img src="/christmas_images/christmas-cookie-hero-banner.png"
+       alt="Decorated Christmas cookies"
        class="object-cover w-full h-full">
 
-  <!-- Overlay 
+  <!-- Overlay
   <div class="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>-->
 
   <!-- Text and CTA -->
@@ -28,7 +29,7 @@ title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
     <p class="text-lg md:text-2xl text-accent-gold mt-4 mb-8">
       Fresh baked. Hand decorated. Holiday magic in every bite.
     </p>
-    <a href="#decorated-cookies" 
+    <a href="#decorated-cookies"
        class="px-8 py-4 bg-xmas-red text-white rounded-full text-xl shadow-lg hover:bg-red-700 transition-transform transform hover:scale-105">
       Order Now
     </a>
@@ -58,7 +59,7 @@ title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
 
     <!-- Traditional Cookies Card -->
     <a href="traditional-cookies#traditional-cookies" class="bg-white rounded-3xl shadow-lg p-6 border border-gray-200 hover:scale-[1.03] transform transition">
-      <img src="christmas_images/christmas-cookie-giant-chocolate-chip.avif"
+      <img src="/christmas_images/christmas-cookie-giant-chocolate-chip.avif"
            alt="Traditional cookies"
            class="rounded-2xl w-full h-64 object-cover mb-6">
 
@@ -72,12 +73,12 @@ title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
         <li>Gingerbread Crinkle</li>
       </ul>
 
-      <p class="font-chunky mt-4 text-xl font-medium text-gray-700">$27 per dozen</p>
+      <p class="font-chunky mt-4 text-xl font-medium text-gray-700">${BAKERY_MENU['cookies-traditional'].price} per {BAKERY_MENU['cookies-traditional'].unit}</p>
     </a>
 
     <!-- Decorated Cookies Card (highlighted / center) -->
     <a href="decorated-cookies#custom_cookies" class=" bg-white rounded-3xl shadow-xl p-6 border border-gray-200  hover:scale-[1.03] transform transition">
-      <img src="christmas_images/christmas-cookie-snowman.avif"
+      <img src="/christmas_images/christmas-cookie-snowman.avif"
            alt="Decorated cookies"
            class="rounded-2xl w-full h-64 object-cover mb-6">
 
@@ -92,13 +93,13 @@ title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
         <li>Pumpkin Spice</li>
       </ul>
 
-      <p class="font-chunky  mt-4 text-xl font-medium text-gray-700">$32 per dozen</p>
-      
+      <p class="font-chunky mt-4 text-xl font-medium text-gray-700">${BAKERY_MENU['cookies-decorated-icing'].price} per {BAKERY_MENU['cookies-decorated-icing'].unit}</p>
+
     </a>
 
     <!-- Biscotti Card -->
     <a href="traditional-cookies#biscotti" class="bg-white rounded-3xl shadow-lg p-6 border border-gray-200 hover:scale-105 transform transition">
-      <img src="christmas_images/christmas-biscotti-cranberry.avif"
+      <img src="/christmas_images/christmas-biscotti-cranberry.avif"
            alt="Biscotti"
            class="rounded-2xl w-full h-64 object-cover mb-6">
 
@@ -111,9 +112,9 @@ title="Sweet Bakes Chicago - Always Nut Free and Allergy Friendly"
         <li>Pumpkin Spice</li>
         <li>Chocolate Cardamom</li>
       </ul>
-    </ul>
 
-    <p class="font-chunky mt-4 text-xl font-medium text-gray-700">$27 per dozen</p>
+      <p class="font-chunky mt-4 text-xl font-medium text-gray-700">${BAKERY_MENU['cookies-biscotti'].price} per {BAKERY_MENU['cookies-biscotti'].unit}</p>
     </a>
 </section>
+</body>
 </Page>
